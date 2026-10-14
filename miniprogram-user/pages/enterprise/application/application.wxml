@@ -1,0 +1,176 @@
+<view class="page">
+  <view class="page-head">
+    <text class="page-title">投递管理</text>
+    <text class="page-desc">先看重点信息，需要时再展开查看完整简历和投递附件。</text>
+  </view>
+
+  <view wx:if="{{loading}}" class="state-card">
+    <text>投递记录加载中...</text>
+  </view>
+
+  <view wx:elif="{{!applicationList.length}}" class="state-card">
+    <text>暂时还没有收到新的投递。</text>
+  </view>
+
+  <view wx:else class="application-list">
+    <view class="application-card" wx:for="{{applicationList}}" wx:key="id">
+      <view class="card-top">
+        <view class="job-info">
+          <text class="job-title">{{item.jobTitle}}</text>
+          <text class="company-name">{{item.companyName}}</text>
+        </view>
+        <view class="status-badge {{item.statusTone}}">{{item.statusText}}</view>
+      </view>
+
+      <view class="job-meta">
+        <text class="meta-pill salary">{{item.salary}}</text>
+        <text class="meta-pill">{{item.location}}</text>
+      </view>
+
+      <view class="candidate-row">
+        <image class="candidate-avatar" src="{{item.resume ? item.resume.avatar : '/images/avatar.png'}}" mode="aspectFill"></image>
+        <view class="candidate-body">
+          <view class="candidate-head">
+            <text class="candidate-name">{{item.resume ? item.resume.name : '候选人资料待完善'}}</text>
+            <text wx:if="{{item.resume}}" class="candidate-tag">{{item.resume.genderText}}</text>
+          </view>
+          <text class="candidate-role">{{item.resume ? item.resume.expectedPositionName : '暂无期望职位'}}</text>
+          <view class="candidate-contact">
+            <text wx:if="{{item.resume && item.resume.phone !== '未填写'}}">{{item.resume.phone}}</text>
+            <text wx:if="{{item.resume && item.resume.email !== '未填写'}}">{{item.resume.email}}</text>
+            <text wx:if="{{item.resume && item.resume.location !== '未填写'}}">{{item.resume.location}}</text>
+          </view>
+        </view>
+        <button class="toggle-btn" catchtap="toggleExpand" data-id="{{item.id}}">{{item.expanded ? '收起' : '展开'}}</button>
+      </view>
+
+      <view class="timeline-row">
+        <text>投递时间：{{item.createdAt}}</text>
+        <text wx:if="{{item.interviewTime}}">面试时间：{{item.interviewTime}}</text>
+      </view>
+
+      <view wx:if="{{item.interviewAddress}}" class="interview-box">
+        <text>面试地点：{{item.interviewAddress}}</text>
+      </view>
+
+      <view wx:if="{{item.expanded}}" class="detail-panel">
+        <view class="detail-grid">
+          <view class="detail-item">
+            <text class="detail-label">学历</text>
+            <text class="detail-value">{{item.resume ? item.resume.education : '未填写'}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="detail-label">经验</text>
+            <text class="detail-value">{{item.resume ? item.resume.experience : '未填写'}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="detail-label">手机号</text>
+            <text class="detail-value">{{item.resume ? item.resume.phone : '未填写'}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="detail-label">邮箱</text>
+            <text class="detail-value">{{item.resume ? item.resume.email : '未填写'}}</text>
+          </view>
+        </view>
+
+        <view class="attachment-box">
+          <text class="intro-title">投递附件</text>
+          <text class="intro-text">{{item.resumeFileName}}</text>
+        </view>
+
+        <view class="intro-block">
+          <text class="intro-title">自我介绍</text>
+          <text class="intro-text">{{item.resume ? item.resume.selfIntroduction : '暂无自我介绍'}}</text>
+        </view>
+      </view>
+
+      <view class="action-row">
+        <button class="action-btn ghost-btn" catchtap="goToResumeDetail" data-id="{{item.resumeId}}">查看简历</button>
+        <button
+          wx:if="{{item.resumeFileId}}"
+          class="action-btn ghost-btn"
+          catchtap="downloadResumeFile"
+          data-file-id="{{item.resumeFileId}}"
+        >
+          下载附件
+        </button>
+        <button
+          class="action-btn ghost-btn"
+          catchtap="startChat"
+          data-user-id="{{item.resume ? item.resume.userId : item.userId}}"
+          data-user-name="{{item.resume ? item.resume.name : '候选人'}}"
+          data-user-avatar="{{item.resume ? item.resume.avatar : ''}}"
+        >
+          立即沟通
+        </button>
+        <button
+          wx:if="{{item.status === 0 || item.status === 1}}"
+          class="action-btn primary-btn"
+          catchtap="updateApplicationStatus"
+          data-id="{{item.id}}"
+          data-status="{{1}}"
+        >
+          邀请面试
+        </button>
+        <button
+          wx:if="{{item.status === 0 || item.status === 1}}"
+          class="action-btn warn-btn"
+          catchtap="updateApplicationStatus"
+          data-id="{{item.id}}"
+          data-status="{{2}}"
+        >
+          不合适
+        </button>
+        <button
+          wx:if="{{item.status === 0 || item.status === 1}}"
+          class="action-btn success-btn"
+          catchtap="updateApplicationStatus"
+          data-id="{{item.id}}"
+          data-status="{{3}}"
+        >
+          已录用
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view class="modal" wx:if="{{showInterviewForm}}">
+    <view class="modal-mask" bindtap="closeInterviewForm"></view>
+    <view class="modal-panel">
+      <view class="modal-head">
+        <text class="modal-title">填写面试信息</text>
+        <view class="modal-close" bindtap="closeInterviewForm">×</view>
+      </view>
+
+      <view class="modal-body">
+        <view class="form-item">
+          <text class="form-label">面试时间</text>
+          <view class="picker-field" bindtap="showDatetimePicker">
+            <text>{{interviewForm.interviewTime || '请选择面试时间'}}</text>
+          </view>
+        </view>
+
+        <view class="form-item">
+          <text class="form-label">面试地点</text>
+          <input class="form-input" value="{{interviewForm.interviewAddress}}" bindinput="onInterviewLocationChange" placeholder="请输入面试地点" />
+        </view>
+      </view>
+
+      <view class="modal-footer">
+        <button class="modal-btn cancel-btn" bindtap="closeInterviewForm">取消</button>
+        <button class="modal-btn submit-btn" bindtap="submitInterviewForm">发送邀请</button>
+      </view>
+    </view>
+  </view>
+
+  <van-popup show="{{showDatetimePicker}}" position="bottom" round bind:close="closeDatetimePicker">
+    <van-datetime-picker
+      type="datetime"
+      value="{{datetimePickerValue}}"
+      min-date="{{minDate}}"
+      max-date="{{maxDate}}"
+      bind:confirm="onDatetimeConfirm"
+      bind:cancel="closeDatetimePicker"
+    />
+  </van-popup>
+</view>

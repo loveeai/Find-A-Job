@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="page-head">
+    <text class="page-title">沟通消息</text>
+    <text class="page-desc">这里集中展示聊天会话。</text>
+  </view>
+
+  <view wx:if="{{loading}}" class="state-card">
+    <text>消息加载中...</text>
+  </view>
+
+  <view wx:elif="{{conversations.length}}" class="list-wrap">
+    <view class="conversation-item" wx:for="{{conversations}}" wx:key="id" data-index="{{index}}" bindtap="openConversation">
+      <view class="avatar-wrap">
+        <image class="avatar" src="{{item.avatar || '/images/avatar.png'}}" mode="aspectFill"></image>
+        <view wx:if="{{item.unreadCount > 0}}" class="badge">{{item.unreadCount > 99 ? '99+' : item.unreadCount}}</view>
+      </view>
+      <view class="content">
+        <view class="content-top">
+          <text class="name">{{item.userName}}</text>
+          <text class="time">{{item.timeText}}</text>
+        </view>
+        <text class="summary">{{item.lastMessage}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class="state-card empty-card">
+    <text class="state-title">还没有聊天会话</text>
+    <text class="state-desc">当你和企业开始沟通后，会话会出现在这里。</text>
+  </view>
+</view>

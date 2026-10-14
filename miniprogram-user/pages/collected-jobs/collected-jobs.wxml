@@ -1,0 +1,43 @@
+<view class="page">
+  <view class="page-head">
+    <text class="page-title">我的收藏</text>
+    <text class="page-desc">这里会展示你收藏过的职位。</text>
+  </view>
+
+  <view wx:if="{{isLoading}}" class="state-card">
+    <text>收藏列表加载中...</text>
+  </view>
+
+  <view wx:elif="{{!collectedJobs.length}}" class="empty-card">
+    <image class="empty-image" src="../../images/empty-search.png" mode="aspectFit"></image>
+    <text class="empty-title">还没有收藏职位</text>
+    <navigator class="btn-primary browse-btn" url="/pages/job/job">去看看最新职位</navigator>
+  </view>
+
+  <block wx:else>
+    <view class="job-card" wx:for="{{collectedJobs}}" wx:key="collectId">
+      <view class="job-main" bindtap="goToJobDetail" data-id="{{item.id}}">
+        <view class="job-top">
+          <view class="job-title-wrap">
+            <text class="job-title">{{item.title}}</text>
+            <text class="job-company">{{item.companyName}}</text>
+          </view>
+          <text class="job-salary">{{item.salary}}</text>
+        </view>
+
+        <view class="meta-row">
+          <text>{{item.industry}}</text>
+        </view>
+
+        <text class="job-desc">{{item.description}}</text>
+
+        <view class="location-row">
+          <van-icon name="location-o" size="26rpx" color="#8a8f99"></van-icon>
+          <text>{{item.location}}</text>
+        </view>
+      </view>
+
+      <button class="btn-default cancel-btn" bindtap="cancelCollect" data-collect-id="{{item.collectId}}">取消收藏</button>
+    </view>
+  </block>
+</view>

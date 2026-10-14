@@ -1,0 +1,99 @@
+<view class="page">
+  <view class="hero-card" bindtap="onUserInfoTap">
+    <image class="avatar" src="{{userInfo.userPicture || '/images/avatar.png'}}" mode="aspectFill"></image>
+    <view class="hero-body">
+      <text class="user-name">{{userInfo.userName || '未登录'}}</text>
+      <text class="user-role">{{roleId === 2 ? '企业用户' : '普通用户'}}</text>
+      <text class="hero-tip">{{isLoggedIn ? '点击查看和修改个人信息' : '登录后即可查看完整功能'}}</text>
+    </view>
+    <van-icon name="arrow" size="32rpx" color="#ffffff"></van-icon>
+  </view>
+
+  <view class="menu-card">
+    <text class="section-title">{{roleId === 2 ? '企业服务' : '求职服务'}}</text>
+
+    <view wx:if="{{roleId === 3}}">
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/message/message">
+        <view class="menu-main">
+          <van-icon name="chat-o" size="36rpx" color="#07c160"></van-icon>
+          <text>沟通消息</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/collected-jobs/collected-jobs">
+        <view class="menu-main">
+          <van-icon name="star-o" size="36rpx" color="#07c160"></van-icon>
+          <text>我的收藏</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/application/application">
+        <view class="menu-main">
+          <van-icon name="notes-o" size="36rpx" color="#07c160"></van-icon>
+          <text>我的投递</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/interview/interview">
+        <view class="menu-main">
+          <van-icon name="clock-o" size="36rpx" color="#07c160"></van-icon>
+          <text>我的面试</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+    </view>
+
+    <view wx:else>
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/enterprise/message/message">
+        <view class="menu-main">
+          <van-icon name="chat-o" size="36rpx" color="#07c160"></van-icon>
+          <text>沟通中心</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/enterprise/info/info">
+        <view class="menu-main">
+          <van-icon name="home-o" size="36rpx" color="#07c160"></van-icon>
+          <text>企业资料</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/enterprise/job-publish/job-publish">
+        <view class="menu-main">
+          <van-icon name="edit" size="36rpx" color="#07c160"></van-icon>
+          <text>发布职位</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/enterprise/application/application">
+        <view class="menu-main">
+          <van-icon name="notes-o" size="36rpx" color="#07c160"></van-icon>
+          <text>投递管理</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="navigateTo" data-url="/pages/enterprise/resume-list/resume-list">
+        <view class="menu-main">
+          <van-icon name="friends-o" size="36rpx" color="#07c160"></van-icon>
+          <text>简历库</text>
+        </view>
+        <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{isLoggedIn && roleId === 3}}" class="menu-card secondary-card">
+    <text class="section-title">账户安全</text>
+    <view class="menu-item" bindtap="goToChangePassword">
+      <view class="menu-main">
+        <van-icon name="lock" size="36rpx" color="#07c160"></van-icon>
+        <text>修改密码</text>
+      </view>
+      <van-icon name="arrow" size="24rpx" color="#b6bcc7"></van-icon>
+    </view>
+  </view>
+
+  <view wx:if="{{isLoggedIn}}" class="logout-wrap">
+    <button class="btn-danger logout-btn" bindtap="logout">退出登录</button>
+  </view>
+</view>

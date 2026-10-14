@@ -1,0 +1,164 @@
+.page {
+  min-height: 100vh;
+  padding: 24rpx;
+  background: #f6f8fa;
+  box-sizing: border-box;
+}
+
+.page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.page-head-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.page-desc {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #8a8f99;
+  line-height: 1.6;
+}
+
+.edit-btn {
+  height: 76rpx;
+  padding: 0 24rpx;
+  font-size: 24rpx;
+  flex-shrink: 0;
+}
+
+.state-card,
+.hero-card,
+.form-card {
+  background: #ffffff;
+  border-radius: 28rpx;
+  box-shadow: 0 12rpx 28rpx rgba(31, 36, 48, 0.06);
+}
+
+.state-card {
+  padding: 60rpx 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8a8f99;
+}
+
+.hero-card {
+  display: flex;
+  gap: 24rpx;
+  align-items: center;
+  padding: 28rpx;
+}
+
+.logo {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 28rpx;
+  background: #f3f5f7;
+  flex-shrink: 0;
+}
+
+.hero-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.company-name {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #1f2430;
+  line-height: 1.4;
+}
+
+.company-meta {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #58606d;
+}
+
+.form-card {
+  margin-top: 20rpx;
+  padding: 28rpx;
+}
+
+.form-item {
+  margin-bottom: 24rpx;
+}
+
+.form-item:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1f2430;
+}
+
+.input,
+.textarea,
+.value {
+  width: 100%;
+  border-radius: 20rpx;
+  background: #f8fafb;
+  border: 2rpx solid #e6ecf0;
+  font-size: 28rpx;
+  color: #1f2430;
+  box-sizing: border-box;
+}
+
+.input,
+.value {
+  min-height: 88rpx;
+  padding: 24rpx 22rpx;
+}
+
+.value {
+  display: block;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.textarea {
+  min-height: 220rpx;
+  padding: 20rpx 22rpx;
+}
+
+.value.multiline {
+  min-height: 180rpx;
+  white-space: pre-wrap;
+}
+
+.logo-btn {
+  width: 100%;
+  height: 84rpx;
+}
+
+.action-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  margin-top: 20rpx;
+}
+
+.action-btn {
+  width: 100%;
+  height: 88rpx;
+}

@@ -1,0 +1,75 @@
+<view class="page">
+  <view class="page-head">
+    <view class="page-head-main">
+      <text class="page-title">企业资料</text>
+      <text class="page-desc">维护企业基础信息，方便求职者查看。</text>
+    </view>
+    <button class="btn-default edit-btn" bindtap="toggleEdit">{{isEditing ? '取消编辑' : '编辑资料'}}</button>
+  </view>
+
+  <view wx:if="{{isLoading}}" class="state-card">
+    <text>企业信息加载中...</text>
+  </view>
+
+  <view wx:else>
+    <view class="hero-card">
+      <image class="logo" src="{{enterprise.logo}}" mode="aspectFill"></image>
+      <view class="hero-body">
+        <text class="company-name">{{enterprise.name || '未设置企业名称'}}</text>
+        <text class="company-meta">{{enterprise.industry || '未设置行业'}}</text>
+        <text class="company-meta">{{enterprise.scale || '未设置规模'}}</text>
+      </view>
+    </view>
+
+    <view class="form-card">
+      <view class="form-item">
+        <text class="label">企业名称</text>
+        <input wx:if="{{isEditing}}" class="input" value="{{enterprise.name}}" bindinput="onInput" data-field="name" placeholder="请输入企业名称" />
+        <view wx:else class="value">{{enterprise.name || '未填写'}}</view>
+      </view>
+
+      <view class="form-item">
+        <text class="label">所属行业</text>
+        <input wx:if="{{isEditing}}" class="input" value="{{enterprise.industry}}" bindinput="onInput" data-field="industry" placeholder="请输入所属行业" />
+        <view wx:else class="value">{{enterprise.industry || '未填写'}}</view>
+      </view>
+
+      <view class="form-item">
+        <text class="label">企业规模</text>
+        <input wx:if="{{isEditing}}" class="input" value="{{enterprise.scale}}" bindinput="onInput" data-field="scale" placeholder="例如：50-150人" />
+        <view wx:else class="value">{{enterprise.scale || '未填写'}}</view>
+      </view>
+
+      <view class="form-item">
+        <text class="label">企业地址</text>
+        <input wx:if="{{isEditing}}" class="input" value="{{enterprise.address}}" bindinput="onInput" data-field="address" placeholder="请输入企业地址" />
+        <view wx:else class="value">{{enterprise.address || '未填写'}}</view>
+      </view>
+
+      <view class="form-item">
+        <text class="label">企业介绍</text>
+        <textarea
+          wx:if="{{isEditing}}"
+          class="textarea"
+          value="{{enterprise.description}}"
+          bindinput="onInput"
+          data-field="description"
+          maxlength="1000"
+          placeholder="介绍企业背景、业务方向和团队氛围"
+        ></textarea>
+        <view wx:else class="value multiline">{{enterprise.description || '未填写'}}</view>
+      </view>
+
+      <view wx:if="{{isEditing}}" class="form-item">
+        <text class="label">企业 Logo</text>
+        <button class="btn-default logo-btn" bindtap="uploadLogo">上传 Logo</button>
+      </view>
+    </view>
+
+    <view class="action-block">
+      <button wx:if="{{isEditing}}" class="btn-primary action-btn" bindtap="saveEnterpriseInfo">保存企业资料</button>
+      <button class="btn-default action-btn" bindtap="goToChangePassword">修改密码</button>
+      <button class="btn-danger action-btn" bindtap="logout">退出登录</button>
+    </view>
+  </view>
+</view>

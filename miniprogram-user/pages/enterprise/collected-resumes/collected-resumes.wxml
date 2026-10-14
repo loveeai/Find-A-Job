@@ -1,0 +1,66 @@
+<view class="page">
+  <view class="page-head">
+    <text class="page-title">收藏列表</text>
+    <text class="page-desc">这里展示企业已收藏的求职者，可随时查看简历和继续沟通。</text>
+  </view>
+
+  <view wx:if="{{loading}}" class="state-card">
+    <text>收藏数据加载中...</text>
+  </view>
+
+  <view wx:elif="{{!collectedList.length}}" class="state-card">
+    <text>暂时还没有收藏的求职者</text>
+  </view>
+
+  <block wx:else>
+    <view class="candidate-card" wx:for="{{collectedList}}" wx:key="collectId">
+      <view class="candidate-top">
+        <view class="candidate-profile">
+          <image class="candidate-avatar" src="{{item.resume ? item.resume.avatar : '/images/avatar.png'}}" mode="aspectFill"></image>
+          <view class="candidate-main">
+            <text class="candidate-name">{{item.resume ? item.resume.name : '求职者资料已失效'}}</text>
+            <text class="candidate-job">{{item.resume ? item.resume.expectedPositionName : '暂无期望职位'}}</text>
+          </view>
+        </view>
+        <text class="collect-time">{{item.collectedAt}}</text>
+      </view>
+
+      <view class="candidate-meta" wx:if="{{item.resume}}">
+        <text>{{item.resume.education}}</text>
+        <text>{{item.resume.experience}}</text>
+        <text>{{item.resume.location}}</text>
+      </view>
+
+      <view class="candidate-contact" wx:if="{{item.resume}}">
+        <text>电话：{{item.resume.phone}}</text>
+        <text>邮箱：{{item.resume.email}}</text>
+      </view>
+
+      <view class="skill-row" wx:if="{{item.introPreview.length}}">
+        <text class="skill-tag" wx:for="{{item.introPreview}}" wx:key="index">{{item}}</text>
+      </view>
+
+      <view class="action-row">
+        <button
+          wx:if="{{item.resumeId}}"
+          class="action-btn primary-btn"
+          bindtap="goToResumeDetail"
+          data-id="{{item.resumeId}}"
+        >
+          查看简历
+        </button>
+        <button
+          wx:if="{{item.resume && item.resume.userId}}"
+          class="action-btn ghost-btn"
+          bindtap="startChat"
+          data-user-id="{{item.resume.userId}}"
+          data-user-name="{{item.resume.name}}"
+          data-user-avatar="{{item.resume.avatar}}"
+        >
+          立即沟通
+        </button>
+        <button class="action-btn warn-btn" bindtap="removeCollect" data-id="{{item.collectId}}">取消收藏</button>
+      </view>
+    </view>
+  </block>
+</view>

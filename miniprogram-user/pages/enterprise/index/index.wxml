@@ -1,0 +1,88 @@
+<view class="page">
+  <swiper class="hero-swiper" indicator-dots autoplay circular interval="3000" duration="500">
+    <block wx:for="{{bannerList}}" wx:key="id">
+      <swiper-item>
+        <image class="hero-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="quick-card">
+    <view class="quick-item" bindtap="navigateTo" data-url="/pages/enterprise/job-publish/job-publish">
+      <van-icon name="add-o" size="46rpx" color="#ffffff"></van-icon>
+      <text>发布职位</text>
+    </view>
+    <view class="quick-item" bindtap="navigateTo" data-url="/pages/enterprise/application/application">
+      <van-icon name="notes-o" size="46rpx" color="#ffffff"></van-icon>
+      <text>投递管理</text>
+    </view>
+    <view class="quick-item" bindtap="navigateTo" data-url="/pages/enterprise/job-management/job-management">
+      <van-icon name="todo-list-o" size="46rpx" color="#ffffff"></van-icon>
+      <text>职位管理</text>
+    </view>
+    <view class="quick-item" bindtap="navigateTo" data-url="/pages/enterprise/info/info">
+      <van-icon name="setting-o" size="46rpx" color="#ffffff"></van-icon>
+      <text>企业资料</text>
+    </view>
+    <view class="quick-item" bindtap="navigateTo" data-url="/pages/enterprise/collected-resumes/collected-resumes">
+      <van-icon name="star-o" size="46rpx" color="#ffffff"></van-icon>
+      <text>收藏列表</text>
+    </view>
+    <view class="quick-item" bindtap="navigateTo" data-url="/pages/enterprise/message/message">
+      <van-icon name="chat-o" size="46rpx" color="#ffffff"></van-icon>
+      <text>沟通中心</text>
+    </view>
+  </view>
+
+  <view class="section-head">
+    <view>
+      <text class="section-title">候选人推荐</text>
+      <text class="section-desc">优先展示近期完善过简历的求职者</text>
+    </view>
+  </view>
+
+  <view wx:if="{{isLoading}}" class="state-card">
+    <text>候选人加载中...</text>
+  </view>
+
+  <view wx:elif="{{!userList.length}}" class="state-card">
+    <text>暂时还没有可展示的候选人</text>
+  </view>
+
+  <block wx:else>
+    <view class="candidate-card" wx:for="{{userList}}" wx:key="id" bindtap="goToResumeDetail" data-id="{{item.id}}">
+      <view class="candidate-top">
+        <view class="candidate-profile">
+          <image class="candidate-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+          <view class="candidate-main">
+            <text class="candidate-name">{{item.name}}</text>
+            <text class="candidate-job">{{item.expectedPositionName}}</text>
+          </view>
+        </view>
+        <view class="collect-btn {{item.isCollected ? 'active' : ''}}" catchtap="collectResume" data-id="{{item.id}}">
+          <van-icon
+            name="{{item.isCollected ? 'star' : 'star-o'}}"
+            size="28rpx"
+            color="{{item.isCollected ? '#ff8a00' : '#07c160'}}"
+          ></van-icon>
+          <text>{{item.isCollected ? '已收藏' : '收藏'}}</text>
+        </view>
+      </view>
+
+      <view class="candidate-meta">
+        <text>{{item.education}}</text>
+        <text>{{item.experience}}</text>
+        <text>{{item.location}}</text>
+      </view>
+
+      <view class="candidate-contact">
+        <text>电话：{{item.phone}}</text>
+        <text>邮箱：{{item.email}}</text>
+      </view>
+
+      <view class="skill-row" wx:if="{{item.skillPreview.length}}">
+        <text class="skill-tag" wx:for="{{item.skillPreview}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+  </block>
+</view>

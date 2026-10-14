@@ -1,0 +1,6 @@
+<view class="custom-tab-bar">
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" bindtap="switchTab" data-index="{{index}}" data-path="{{item.pagePath}}">
+    <van-icon name="{{selected === index ? item.selectedIconName : item.iconName}}" size="40rpx" color="{{selected === index ? selectedColor : color}}" />
+    <text style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</text>
+  </view>
+</view>

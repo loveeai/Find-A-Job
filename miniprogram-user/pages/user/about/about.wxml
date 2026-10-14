@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="page-title">关于我们</view>
+  
+  <!-- 应用信息 -->
+  <view class="app-info">
+    <view class="app-logo">
+      <image src="../../../images/logo.png" mode="aspectFit"></image>
+    </view>
+    <view class="app-name">求职招聘小程序</view>
+    <view class="app-version">版本号：{{version}}</view>
+  </view>
+  
+  <!-- 相关链接 -->
+  <view class="about-menu">
+    <view class="menu-item" bindtap="goToUserAgreement">
+      <text>用户协议</text>
+      <van-icon name="arrow" size="24rpx" color="#999"></van-icon>
+    </view>
+    <view class="menu-item" bindtap="goToPrivacyPolicy">
+      <text>隐私政策</text>
+      <van-icon name="arrow" size="24rpx" color="#999"></van-icon>
+    </view>
+    <view class="menu-item" bindtap="contactCustomerService">
+      <text>联系客服</text>
+      <van-icon name="arrow" size="24rpx" color="#999"></van-icon>
+    </view>
+  </view>
+  
+  <!-- 版权信息 -->
+  <view class="copyright">
+    <text>© 2024 求职招聘小程序 版权所有</text>
+  </view>
+</view>

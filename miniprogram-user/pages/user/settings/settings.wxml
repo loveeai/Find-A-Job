@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="page-title">设置</view>
+  
+  <view class="settings-menu">
+    <!-- 账户设置 -->
+    <view class="menu-group">
+      <text class="section-title">账户设置</text>
+      <view class="menu-item" bindtap="editProfile">
+        <van-icon name="contact" size="40rpx" color="#07c160"></van-icon>
+        <text>编辑个人信息</text>
+        <van-icon name="arrow" size="24rpx" color="#999" class="arrow"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="changePassword">
+        <van-icon name="lock" size="40rpx" color="#07c160"></van-icon>
+        <text>修改密码</text>
+        <van-icon name="arrow" size="24rpx" color="#999" class="arrow"></van-icon>
+      </view>
+    </view>
+    
+    <!-- 其他设置 -->
+    <view class="menu-group">
+      <text class="section-title">其他设置</text>
+      <view class="menu-item" bindtap="privacySettings">
+        <van-icon name="shield-o" size="40rpx" color="#07c160"></van-icon>
+        <text>隐私设置</text>
+        <van-icon name="arrow" size="24rpx" color="#999" class="arrow"></van-icon>
+      </view>
+      <view class="menu-item" bindtap="clearCache">
+        <van-icon name="delete-o" size="40rpx" color="#07c160"></van-icon>
+        <text>清除缓存</text>
+        <van-icon name="arrow" size="24rpx" color="#999" class="arrow"></van-icon>
+      </view>
+    </view>
+  </view>
+</view>

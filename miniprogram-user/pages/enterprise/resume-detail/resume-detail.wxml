@@ -1,0 +1,80 @@
+<view class="page">
+  <view class="page-head">
+    <view class="back-btn" bindtap="goBack">
+      <van-icon name="arrow-left" size="34rpx" color="#1f2430"></van-icon>
+    </view>
+    <text class="page-title">简历详情</text>
+    <view class="head-placeholder"></view>
+  </view>
+
+  <view wx:if="{{isLoading}}" class="state-card">
+    <text>简历加载中...</text>
+  </view>
+
+  <view wx:elif="{{resume}}">
+    <view class="hero-card">
+      <image class="avatar" src="{{resume.avatar}}" mode="aspectFill"></image>
+      <view class="hero-body">
+        <text class="resume-name">{{resume.name}}</text>
+        <text class="resume-role">{{resume.expectedPositionName}}</text>
+        <view class="badge-row">
+          <text class="badge">{{resume.gender === 1 ? '男' : resume.gender === 2 ? '女' : '未填写'}}</text>
+          <text class="badge">{{resume.education}}</text>
+          <text class="badge">{{resume.experience}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <text class="section-title">联系方式</text>
+      <view class="detail-row">
+        <text class="detail-label">手机号</text>
+        <text class="detail-value">{{resume.phone}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">邮箱</text>
+        <text class="detail-value">{{resume.email}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">所在地</text>
+        <text class="detail-value">{{resume.location}}</text>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <text class="section-title">简历信息</text>
+      <view class="detail-row">
+        <text class="detail-label">简历标题</text>
+        <text class="detail-value">{{resume.title}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">期望岗位</text>
+        <text class="detail-value">{{resume.expectedPositionName}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">学历</text>
+        <text class="detail-value">{{resume.education}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">工作经验</text>
+        <text class="detail-value">{{resume.experience}}</text>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <text class="section-title">自我介绍</text>
+      <text class="intro-text">{{resume.selfIntroduction}}</text>
+    </view>
+
+    <view class="bottom-bar">
+      <button class="btn-default action-btn {{isCollected ? 'collected' : ''}}" bindtap="toggleCollection">
+        {{isCollected ? '取消收藏' : '收藏简历'}}
+      </button>
+      <button class="btn-primary action-btn" bindtap="startChat">立即沟通</button>
+    </view>
+  </view>
+
+  <view wx:else class="state-card">
+    <text>暂无简历信息</text>
+  </view>
+</view>

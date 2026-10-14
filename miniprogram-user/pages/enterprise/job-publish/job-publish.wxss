@@ -1,0 +1,216 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 24rpx 0;
+  border-bottom: 2rpx solid #eee;
+  margin-bottom: 32rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -8rpx;
+  left: 0;
+  width: 80rpx;
+  height: 4rpx;
+  background-color: #07c160;
+  border-radius: 2rpx;
+}
+
+.content {
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+}
+
+.status-card {
+  margin-bottom: 40rpx;
+  padding: 28rpx 32rpx;
+  border-radius: 20rpx;
+  background: rgba(255, 77, 79, 0.08);
+  border: 2rpx solid rgba(255, 77, 79, 0.18);
+}
+
+.status-card-title {
+  display: block;
+  margin-bottom: 12rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #d4380d;
+}
+
+.status-card-text {
+  display: block;
+  font-size: 26rpx;
+  line-height: 1.6;
+  color: #8c3b2a;
+}
+
+.form-item {
+  margin-bottom: 50rpx;
+  position: relative;
+}
+
+.form-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 二级分类样式 */
+.second-level {
+  margin-top: 30rpx;
+  margin-bottom: 0;
+  padding-left: 40rpx;
+  border-left: 4rpx solid rgba(7, 193, 96, 0.3);
+}
+
+.second-level .label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}
+
+.label {
+  display: block;
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  font-weight: 500;
+}
+
+.required {
+  color: #ff4757;
+  margin-left: 8rpx;
+}
+
+.input, .textarea, .picker-content {
+  border: 3rpx solid #e6e6e6;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  font-size: 30rpx;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #07c160;
+  box-shadow: 0 0 0 6rpx rgba(7, 193, 96, 0.1);
+  outline: none;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: #ccc;
+}
+
+.textarea {
+  min-height: 200rpx;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.picker {
+  width: 100%;
+}
+
+.picker-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.picker-content:active {
+  background-color: rgba(7, 193, 96, 0.05);
+}
+
+.picker-content::after {
+  content: '>';
+  font-size: 36rpx;
+  color: #999;
+  font-weight: normal;
+  transform: rotate(90deg);
+}
+
+.salary-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  padding: 8rpx;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.salary {
+  width: 200rpx;
+  border: 3rpx solid #e6e6e6;
+  background-color: #fff;
+  padding: 20rpx;
+  font-size: 30rpx;
+  border-radius: 16rpx;
+  transition: all 0.3s ease;
+}
+
+.salary:focus {
+  border: 3rpx solid #07c160;
+  border-radius: 12rpx;
+  box-shadow: 0 0 0 4rpx rgba(7, 193, 96, 0.1);
+  background-color: #fff;
+}
+
+.salary-divider {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.salary-unit {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.publish-btn {
+  margin-top: 60rpx;
+  width: 100%;
+}
+
+.publish-btn[disabled] {
+  opacity: 0.6;
+}
+
+/* 添加表单区域分隔线 */
+.form-section {
+  padding-bottom: 40rpx;
+  margin-bottom: 40rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* 优化选择器的视觉效果 */
+.picker:focus-within .picker-content {
+  border-color: #07c160;
+  box-shadow: 0 0 0 6rpx rgba(7, 193, 96, 0.1);
+}
+
+/* 占位符样式 */
+.placeholder {
+  color: #ccc;
+}

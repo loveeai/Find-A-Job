@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="header">
+    <text class="title">招聘管理</text>
+  </view>
+
+  <view class="job-list">
+    <block wx:for="{{jobList}}" wx:key="id">
+      <view class="job-card" bindtap="goToJobDetail" data-id="{{item.id}}">
+        <view class="title-section">
+          <text class="job-title">{{item.title}}</text>
+          <text class="status-tag {{item.progressKey}}">{{item.progressText}}</text>
+        </view>
+
+        <view class="job-meta">
+          <text class="salary">{{item.salaryText}}</text>
+          <text class="location">{{item.location}}</text>
+        </view>
+
+        <view class="time-panel">
+          <view class="time-row">
+            <text class="time-label">发布时间</text>
+            <text class="time-value">{{item.publishTimeText}}</text>
+          </view>
+          <view class="time-row">
+            <text class="time-label">招聘时间</text>
+            <text class="time-value">{{item.startTimeText}} 至 {{item.endTimeText}}</text>
+          </view>
+        </view>
+
+        <view class="job-detail">
+          <text class="detail-text">{{item.description}}</text>
+        </view>
+
+        <view class="action-buttons">
+          <button class="btn-primary action-btn" catchtap="goToJobDetail" data-id="{{item.id}}">
+            编辑
+          </button>
+          <button class="btn-danger action-btn" catchtap="deleteJob" data-id="{{item.id}}">
+            删除
+          </button>
+        </view>
+      </view>
+    </block>
+
+    <view class="load-more" wx:if="{{hasMore && jobList.length}}">
+      <text wx:if="{{loading}}">加载中...</text>
+      <text wx:else bindtap="getJobList">点击加载更多</text>
+    </view>
+
+    <view class="no-more" wx:if="{{!hasMore && jobList.length > 0}}">
+      <text>没有更多招聘信息了</text>
+    </view>
+
+    <view class="empty" wx:if="{{!loading && jobList.length === 0}}">
+      <text>暂无招聘信息</text>
+    </view>
+  </view>
+</view>

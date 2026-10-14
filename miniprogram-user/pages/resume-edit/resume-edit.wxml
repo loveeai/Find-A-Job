@@ -1,0 +1,74 @@
+<view class="page">
+  <view class="page-head">
+    <text class="page-title">{{resume.id ? '编辑简历' : '创建简历'}}</text>
+    <text class="page-desc">填写清晰的个人信息，能让投递更顺利。</text>
+  </view>
+
+  <view wx:if="{{isLoading}}" class="loading-card">
+    <text>简历加载中...</text>
+  </view>
+
+  <view wx:else class="form-card">
+    <view class="form-item">
+      <text class="label">简历标题</text>
+      <input class="input" value="{{resume.title}}" bindinput="onInput" data-field="title" placeholder="例如：校园运营兼职简历" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">姓名</text>
+      <input class="input" value="{{resume.name}}" bindinput="onInput" data-field="name" placeholder="请输入姓名" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">性别</text>
+      <view class="gender-row">
+        <view class="gender-pill {{resume.gender === 1 ? 'active' : ''}}" bindtap="onInput" data-field="gender" data-value="1">男</view>
+        <view class="gender-pill {{resume.gender === 2 ? 'active' : ''}}" bindtap="onInput" data-field="gender" data-value="2">女</view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <text class="label">手机号</text>
+      <input class="input" value="{{resume.phone}}" bindinput="onInput" data-field="phone" placeholder="请输入手机号" type="number" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">邮箱</text>
+      <input class="input" value="{{resume.email}}" bindinput="onInput" data-field="email" placeholder="请输入邮箱" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">所在地</text>
+      <input class="input" value="{{resume.location}}" bindinput="onInput" data-field="location" placeholder="请输入所在城市" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">学历</text>
+      <input class="input" value="{{resume.education}}" bindinput="onInput" data-field="education" placeholder="例如：本科 / 大专 / 研究生" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">工作经验</text>
+      <input class="input" value="{{resume.experience}}" bindinput="onInput" data-field="experience" placeholder="例如：无经验 / 1-3年" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">期望岗位</text>
+      <input class="input" value="{{resume.expectedPositionName}}" bindinput="onInput" data-field="expectedPositionName" placeholder="例如：校园大使 / 新媒体运营" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">自我介绍</text>
+      <textarea
+        class="textarea"
+        value="{{resume.selfIntroduction}}"
+        bindinput="onInput"
+        data-field="selfIntroduction"
+        maxlength="600"
+        placeholder="介绍一下自己的优势、技能和可到岗时间"
+      ></textarea>
+    </view>
+
+    <button class="btn-primary save-btn" bindtap="saveResume">保存简历</button>
+  </view>
+</view>

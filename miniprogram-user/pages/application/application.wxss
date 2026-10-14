@@ -1,0 +1,220 @@
+.page {
+  min-height: 100vh;
+  padding: 24rpx;
+  background: #f6f8fa;
+  box-sizing: border-box;
+}
+
+.page-head {
+  margin-bottom: 20rpx;
+}
+
+.page-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.page-desc {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #8a8f99;
+}
+
+.state-card {
+  padding: 72rpx 36rpx;
+  border-radius: 28rpx;
+  background: #ffffff;
+  box-shadow: 0 14rpx 30rpx rgba(31, 36, 48, 0.06);
+  text-align: center;
+  font-size: 28rpx;
+  color: #8a8f99;
+}
+
+.empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.empty-desc {
+  margin-top: 14rpx;
+  font-size: 26rpx;
+  color: #8a8f99;
+}
+
+.browse-btn {
+  margin-top: 28rpx;
+  padding: 0 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 999rpx;
+  font-size: 28rpx;
+}
+
+.application-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.application-card {
+  padding: 28rpx;
+  border-radius: 28rpx;
+  background: #ffffff;
+  box-shadow: 0 14rpx 30rpx rgba(31, 36, 48, 0.06);
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.job-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1f2430;
+  line-height: 1.4;
+}
+
+.company-name {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #58606d;
+}
+
+.status-badge {
+  flex-shrink: 0;
+  min-width: 132rpx;
+  height: 56rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.status-pending {
+  background: #eef7ff;
+  color: #2c7be5;
+}
+
+.status-interview {
+  background: #fff4e7;
+  color: #f08c00;
+}
+
+.status-hired {
+  background: #edf9f1;
+  color: #13a452;
+}
+
+.status-rejected {
+  background: #fff0f0;
+  color: #e15353;
+}
+
+.status-default {
+  background: #f2f4f7;
+  color: #6b7280;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 20rpx;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44rpx;
+  padding: 0 16rpx;
+  border-radius: 999rpx;
+  background: #f7f9fb;
+  color: #58606d;
+  font-size: 24rpx;
+}
+
+.meta-pill.salary {
+  color: #e46b00;
+  background: #fff3e2;
+}
+
+.notice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+  margin-top: 18rpx;
+  padding: 18rpx 20rpx;
+  border-radius: 20rpx;
+  background: #f8fbff;
+  color: #47607a;
+  font-size: 24rpx;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20rpx;
+  margin-top: 22rpx;
+  padding-top: 20rpx;
+  border-top: 2rpx solid #f1f4f6;
+}
+
+.time-box {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  font-size: 24rpx;
+  color: #8a8f99;
+}
+
+.view-btn,
+.disabled-btn {
+  flex-shrink: 0;
+  min-width: 156rpx;
+  height: 72rpx;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.view-btn {
+  background: #0eb85d;
+  color: #ffffff;
+}
+
+.disabled-btn {
+  background: #f2f4f7;
+  color: #9aa3af;
+}

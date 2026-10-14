@@ -1,0 +1,95 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索简历（姓名、技能、学校等）" bindinput="onSearch" />
+    <button class="filter-btn" bindtap="toggleFilter">
+      <text>筛选</text>
+    </button>
+  </view>
+
+  <!-- 筛选面板 -->
+  <view class="filter-panel" wx:if="{{showFilter}}">
+    <view class="filter-item">
+      <text class="filter-label">行业</text>
+      <input class="filter-input" placeholder="请输入行业" bindinput="onFilterInput" data-field="industry" value="{{filter.industry}}" />
+    </view>
+
+    <view class="filter-item">
+      <text class="filter-label">工作经验</text>
+      <input class="filter-input" placeholder="如：1-3年" bindinput="onFilterInput" data-field="experience" value="{{filter.experience}}" />
+    </view>
+
+    <view class="filter-item">
+      <text class="filter-label">学历</text>
+      <input class="filter-input" placeholder="如：本科" bindinput="onFilterInput" data-field="education" value="{{filter.education}}" />
+    </view>
+
+    <view class="filter-item">
+      <text class="filter-label">技能</text>
+      <input class="filter-input" placeholder="如：Java,Python" bindinput="onFilterInput" data-field="skills" value="{{filter.skills}}" />
+    </view>
+
+    <view class="filter-actions">
+      <button class="btn-default reset-btn" bindtap="resetFilter">重置</button>
+      <button class="btn-primary apply-btn" bindtap="applyFilter">应用筛选</button>
+    </view>
+  </view>
+
+  <!-- 简历列表 -->
+  <view class="resume-list">
+    <view class="resume-item" wx:for="{{resumes}}" wx:key="id" data-index="{{index}}">
+      <view class="resume-header">
+        <view class="resume-info">
+          <text class="name">{{item.userName}}</text>
+          <text class="education">{{item.education}}</text>
+          <text class="experience">{{item.experience}}</text>
+        </view>
+        <button class="{{item.isCollected ? 'btn-default' : 'btn-primary'}} collect-btn" bindtap="collectResume" data-index="{{index}}">
+          {{item.isCollected ? '已收藏' : '收藏'}}
+        </button>
+      </view>
+
+      <view class="resume-content">
+        <view class="content-item">
+          <text class="label">求职意向：</text>
+          <text class="value">{{item.jobIntention}}</text>
+        </view>
+
+        <view class="content-item">
+          <text class="label">期望薪资：</text>
+          <text class="value">{{item.expectedSalary}}</text>
+        </view>
+
+        <view class="content-item">
+          <text class="label">技能：</text>
+          <text class="value">{{item.skills}}</text>
+        </view>
+
+        <view class="content-item">
+          <text class="label">自我介绍：</text>
+          <text class="value">{{item.introduction}}</text>
+        </view>
+      </view>
+
+      <view class="resume-footer">
+        <button class="btn-primary detail-btn" bindtap="viewResumeDetail" data-id="{{item.id}}" size="mini">查看详情</button>
+      </view>
+    </view>
+
+    <!-- 加载更多 -->
+    <view class="load-more" wx:if="{{hasMore}}">
+      <text wx:if="{{loading}}">加载中...</text>
+      <text wx:else bindtap="getResumeList">点击加载更多</text>
+    </view>
+
+    <!-- 没有更多数据 -->
+    <view class="no-more" wx:if="{{!hasMore && resumes.length > 0}}">
+      <text>没有更多简历了</text>
+    </view>
+
+    <!-- 空数据 -->
+    <view class="empty" wx:if="{{!loading && resumes.length === 0}}">
+      <text>暂无简历数据</text>
+    </view>
+  </view>
+</view>

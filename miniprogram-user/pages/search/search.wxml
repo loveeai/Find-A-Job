@@ -1,0 +1,68 @@
+<view class="page">
+  <view class="search-bar">
+    <view class="search-input-wrap">
+      <van-icon name="search" size="30rpx" color="#8a8f99"></van-icon>
+      <input
+        class="search-input"
+        value="{{keyword}}"
+        placeholder="搜索岗位 / 公司 / 关键词"
+        confirm-type="search"
+        bindinput="onKeywordInput"
+        bindconfirm="submitSearch"
+      />
+      <view wx:if="{{keyword}}" class="clear-btn" bindtap="clearKeyword">
+        <van-icon name="cross" size="24rpx" color="#8a8f99"></van-icon>
+      </view>
+    </view>
+    <button class="search-btn" bindtap="submitSearch">搜索</button>
+  </view>
+
+  <view class="section-head">
+    <text class="section-title">搜索结果</text>
+    <text class="section-desc">共 {{total}} 个职位</text>
+  </view>
+
+  <view wx:if="{{!jobList.length && !isLoading}}" class="empty-card">
+    <image class="empty-image" src="../../images/empty-search.png" mode="aspectFit"></image>
+    <text class="empty-text">没有找到符合条件的职位</text>
+  </view>
+
+  <block wx:for="{{jobList}}" wx:key="id">
+    <view class="job-card" bindtap="goToJobDetail" data-id="{{item.id}}">
+      <view class="job-card-top">
+        <view class="job-main">
+          <text class="job-title">{{item.jobName}}</text>
+          <text class="job-company">{{item.companyName}}</text>
+        </view>
+        <text class="job-salary">{{item.salary}}</text>
+      </view>
+
+      <view class="job-meta">
+        <text>{{item.companyIndustry}}</text>
+        <text>{{item.jobType}}</text>
+      </view>
+
+      <view class="job-tags" wx:if="{{item.tags.length}}">
+        <text class="tag" wx:for="{{item.tags}}" wx:key="index">{{item}}</text>
+      </view>
+
+      <view class="job-footer">
+        <view class="job-location">
+          <van-icon name="location-o" size="28rpx" color="#8a8f99"></van-icon>
+          <text>{{item.companyLocation}}</text>
+        </view>
+        <view class="collect-btn {{item.isCollected ? 'active' : ''}}" catchtap="collectJob" data-id="{{item.id}}">
+          <van-icon
+            name="{{item.isCollected ? 'star' : 'star-o'}}"
+            size="28rpx"
+            color="{{item.isCollected ? '#ff8a00' : '#07c160'}}"
+          ></van-icon>
+          <text>{{item.isCollected ? '已收藏' : '收藏'}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view wx:if="{{isLoading}}" class="state-line">加载中...</view>
+  <view wx:elif="{{jobList.length && !hasMore}}" class="state-line">已经到底了</view>
+</view>

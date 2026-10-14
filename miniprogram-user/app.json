@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/job/job",
+    "pages/job-detail/job-detail",
+    "pages/company-detail/company-detail",
+    "pages/resume/resume",
+    "pages/resume-edit/resume-edit",
+    "pages/search/search",
+    "pages/chat/chat",
+    "pages/message/message",
+    "pages/user/user",
+    "pages/change-password/change-password",
+    "pages/user/settings/settings",
+    "pages/user/about/about",
+    "pages/user/feedback/feedback",
+    "pages/collected-jobs/collected-jobs",
+    "pages/application/application",
+    "pages/enterprise/index/index",
+    "pages/enterprise/info/info",
+    "pages/enterprise/job-publish/job-publish",
+    "pages/enterprise/resume-list/resume-list",
+    "pages/enterprise/resume-detail/resume-detail",
+    "pages/enterprise/application/application",
+    "pages/enterprise/collected-resumes/collected-resumes",
+    "pages/enterprise/message/message",
+    "pages/user/personal-info/personal-info",
+    "pages/enterprise/job-management/job-management",
+    "pages/interview/interview"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#07c160",
+    "navigationBarTitleText": "校园兼职小程序",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#07c160",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "\u9996\u9875"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "\u641c\u7d22"
+      },
+      {
+        "pagePath": "pages/resume/resume",
+        "text": "\u7b80\u5386"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "\u6211\u7684"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index"
+  }
+}

@@ -1,0 +1,90 @@
+<view class="page">
+  <view class="hero">
+    <swiper
+      class="hero-swiper"
+      indicator-dots
+      autoplay
+      interval="3000"
+      duration="500"
+      circular
+    >
+      <block wx:for="{{bannerList}}" wx:key="id">
+        <swiper-item>
+          <image class="hero-image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="hero-copy">
+      <text class="hero-title">大学生兼职岗位精选</text>
+      <text class="hero-desc">快速查看最新岗位，投递简历更顺手。</text>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="section-header">
+      <view>
+        <text class="section-title">最新职位</text>
+        <text class="section-desc">优先展示已审核通过的岗位</text>
+      </view>
+      <view class="section-link" bindtap="goToJobList">
+        <text>查看更多</text>
+        <van-icon name="arrow" size="28rpx" color="#07c160"></van-icon>
+      </view>
+    </view>
+
+    <view wx:if="{{isLoadingJobs}}" class="state-card">
+      <text>职位加载中...</text>
+    </view>
+
+    <view wx:elif="{{!jobList.length}}" class="state-card">
+      <text>暂时还没有可展示的职位</text>
+    </view>
+
+    <block wx:else>
+      <view
+        class="job-card"
+        wx:for="{{jobList}}"
+        wx:key="id"
+        bindtap="goToJobDetail"
+        data-id="{{item.id}}"
+      >
+        <view class="job-card-top">
+          <view class="job-main">
+            <text class="job-title">{{item.jobName}}</text>
+            <text class="job-company">{{item.companyName}}</text>
+          </view>
+          <view class="job-salary">{{item.salary}}</view>
+        </view>
+
+        <view class="job-meta">
+          <text>{{item.companyIndustry}}</text>
+          <text>{{item.jobType}}</text>
+        </view>
+
+        <view class="tag-row" wx:if="{{item.tags.length}}">
+          <text class="tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="index">{{tag}}</text>
+        </view>
+
+        <view class="job-card-bottom">
+          <view class="job-location">
+            <van-icon name="location-o" size="28rpx" color="#8a8f99"></van-icon>
+            <text>{{item.companyLocation}}</text>
+          </view>
+          <view
+            class="collect-pill {{item.isCollected ? 'active' : ''}}"
+            catchtap="collectJob"
+            data-id="{{item.id}}"
+          >
+            <van-icon
+              name="{{item.isCollected ? 'star' : 'star-o'}}"
+              size="30rpx"
+              color="{{item.isCollected ? '#ff8a00' : '#07c160'}}"
+            ></van-icon>
+            <text>{{item.isCollected ? '已收藏' : '收藏'}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

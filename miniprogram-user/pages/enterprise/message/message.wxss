@@ -1,0 +1,139 @@
+.page {
+  min-height: 100vh;
+  padding: 24rpx;
+  background: linear-gradient(180deg, #eef7f1 0%, #f6f8fa 260rpx, #f6f8fa 100%);
+  box-sizing: border-box;
+}
+
+.page-head {
+  margin-bottom: 28rpx;
+}
+
+.page-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.page-desc {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #8a8f99;
+  line-height: 1.6;
+}
+
+.state-card,
+.conversation-item {
+  background: #ffffff;
+  border-radius: 16rpx;
+  box-shadow: 0 12rpx 28rpx rgba(31, 36, 48, 0.06);
+}
+
+.state-card {
+  padding: 64rpx 40rpx;
+  text-align: center;
+  color: #8a8f99;
+  font-size: 28rpx;
+}
+
+.empty-card {
+  margin-top: 60rpx;
+}
+
+.state-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.state-desc {
+  display: block;
+  margin-top: 14rpx;
+  line-height: 1.7;
+}
+
+.list-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.conversation-item {
+  display: flex;
+  gap: 18rpx;
+  align-items: center;
+  padding: 24rpx;
+  transition: opacity 0.2s ease;
+}
+
+.conversation-item:active {
+  opacity: 0.72;
+}
+
+.avatar-wrap {
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #f2f4f7;
+}
+
+.badge {
+  position: absolute;
+  top: -6rpx;
+  right: -6rpx;
+  min-width: 36rpx;
+  padding: 4rpx 10rpx;
+  border-radius: 999rpx;
+  background: #ff5b5b;
+  color: #ffffff;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.content-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12rpx;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1f2430;
+  line-height: 1.4;
+}
+
+.time {
+  flex-shrink: 0;
+  font-size: 24rpx;
+  color: #8a8f99;
+}
+
+.summary {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #58606d;
+  line-height: 1.6;
+  word-break: break-word;
+}

@@ -1,0 +1,150 @@
+.page {
+  min-height: 100vh;
+  padding: 24rpx;
+  background: #f6f8fa;
+  box-sizing: border-box;
+}
+
+.page-head {
+  margin-bottom: 20rpx;
+}
+
+.page-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.page-desc {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #8a8f99;
+}
+
+.state-card,
+.empty-card,
+.job-card {
+  background: #ffffff;
+  border-radius: 28rpx;
+  box-shadow: 0 12rpx 28rpx rgba(31, 36, 48, 0.06);
+}
+
+.state-card {
+  padding: 60rpx 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8a8f99;
+}
+
+.empty-card {
+  margin-top: 80rpx;
+  padding: 60rpx 40rpx;
+  text-align: center;
+  overflow: hidden;
+}
+
+.empty-image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.empty-title {
+  display: block;
+  margin-top: 24rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.browse-btn {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+}
+
+.job-card {
+  margin-bottom: 20rpx;
+  padding: 28rpx;
+}
+
+.job-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.job-title-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.job-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1f2430;
+  line-height: 1.4;
+}
+
+.job-company {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #58606d;
+}
+
+.job-salary {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #ff7a00;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+  margin-top: 20rpx;
+}
+
+.meta-row text {
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: #f4f6f8;
+  color: #58606d;
+  font-size: 24rpx;
+}
+
+.job-desc {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 27rpx;
+  line-height: 1.7;
+  color: #38414f;
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  margin-top: 18rpx;
+  font-size: 24rpx;
+  color: #8a8f99;
+}
+
+.cancel-btn {
+  width: 100%;
+  max-width: 100%;
+  height: 84rpx;
+  margin-top: 22rpx;
+  color: #ff5b5b;
+  border-color: #ffd3d3;
+  background: #fff7f7;
+  box-sizing: border-box;
+}

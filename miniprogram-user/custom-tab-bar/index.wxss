@@ -1,0 +1,33 @@
+/* 引入Vant图标样式 */
+@import '../miniprogram_npm/@vant/weapp/icon/index.wxss';
+
+.custom-tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: #fff;
+  border-top: 1rpx solid #eee;
+  height: 100rpx;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+  z-index: 999;
+}
+
+.tab-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.tab-bar-item van-icon {
+  margin-bottom: 8rpx;
+  font-size: 40rpx;
+}
+
+.tab-bar-item text {
+  font-size: 24rpx;
+}

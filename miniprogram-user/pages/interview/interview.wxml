@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="page-title">我的面试</view>
+  
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{isLoading}}">
+    <image src="../../images/loading.gif" mode="aspectFit"></image>
+    <text>加载中...</text>
+  </view>
+  
+  <!-- 空状态 -->
+  <view class="empty" wx:elif="{{isEmpty}}">
+    <van-icon name="smile-o" size="96rpx" color="#999"></van-icon>
+    <text>暂无面试邀请</text>
+    <navigator url="/pages/job/job" class="btn-primary go-browse-btn">去浏览职位</navigator>
+  </view>
+  
+  <!-- 面试列表 -->
+  <view class="interview-list" wx:else>
+    <view class="interview-item" wx:for="{{interviewList}}" wx:key="id">
+      <view class="interview-header">
+        <!-- 企业Logo和基本信息 -->
+        <view class="company-info">
+          <view class="job-info">
+            <text class="job-title">{{item.jobTitle}}</text>
+            <text class="company-name">{{item.company}}</text>
+          </view>
+        </view>
+        <view class="action-menu" bindtap="showActions" data-id="{{item.id}}">
+          <van-icon name="more-o" size="32rpx" color="#666"></van-icon>
+        </view>
+      </view>
+
+      <!-- 职位详情 -->
+      <view class="job-details" bindtap="goToJobDetail" data-job-id="{{item.jobId}}">
+        <view class="detail-row">
+          <text class="detail-label">薪资：</text>
+          <text class="detail-value">{{item.salary}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">地点：</text>
+          <text class="detail-value">{{item.location}}</text>
+        </view>
+      </view>
+
+      <!-- 面试信息 -->
+      <view class="interview-info">
+        <view class="interview-detail">
+          <van-icon name="clock-o" size="28rpx" color="#4ecdc4"></van-icon>
+          <view class="detail-text">
+            <text class="label">面试时间：</text>
+            <text class="value">{{item.interviewTime}}</text>
+          </view>
+        </view>
+        <view class="interview-detail">
+          <van-icon name="location-o" size="28rpx" color="#4ecdc4"></van-icon>
+          <view class="detail-text">
+            <text class="label">面试地点：</text>
+            <text class="value">{{item.interviewAddress}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 操作按钮 -->
+      <view class="action-buttons">
+        <button class="btn-primary accept-btn" bindtap="handleInterviewResponse" data-id="{{item.id}}" data-status="1">接受面试</button>
+        <button class="btn-danger reject-btn" bindtap="handleInterviewResponse" data-id="{{item.id}}" data-status="4">拒绝面试</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作菜单 -->
+  <van-action-sheet
+    show="{{showActionSheet}}"
+    actions="{{[{ name: 'accept', text: '接受面试' }, { name: 'reject', text: '拒绝面试' }]}}"
+    bind:select="onActionSheetSelect"
+    bind:close="closeActionSheet"
+  ></van-action-sheet>
+</view>

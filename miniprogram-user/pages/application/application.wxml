@@ -1,0 +1,54 @@
+<view class="page">
+  <view class="page-head">
+    <text class="page-title">我的投递</text>
+    <text class="page-desc">集中查看投递进度和职位反馈。</text>
+  </view>
+
+  <view wx:if="{{isLoading}}" class="state-card">
+    <text>投递记录加载中...</text>
+  </view>
+
+  <view wx:elif="{{isEmpty}}" class="state-card empty-card">
+    <text class="empty-title">还没有投递记录</text>
+    <text class="empty-desc">去首页看看合适的职位吧。</text>
+    <navigator url="/pages/index/index" open-type="switchTab" class="btn-primary browse-btn">去浏览职位</navigator>
+  </view>
+
+  <view wx:else class="application-list">
+    <view class="application-card" wx:for="{{applications}}" wx:key="id">
+      <view class="card-top">
+        <view class="card-main">
+          <text class="job-title">{{item.jobTitle}}</text>
+          <text class="company-name">{{item.company}}</text>
+        </view>
+        <view class="status-badge {{item.statusClass}}">{{item.statusText}}</view>
+      </view>
+
+      <view class="meta-row">
+        <text class="meta-pill salary">{{item.salary}}</text>
+        <text class="meta-pill">{{item.location}}</text>
+      </view>
+
+      <view wx:if="{{item.interviewTime || item.interviewAddress}}" class="notice-card">
+        <text wx:if="{{item.interviewTime}}">面试时间：{{item.interviewTime}}</text>
+        <text wx:if="{{item.interviewAddress}}">面试地点：{{item.interviewAddress}}</text>
+      </view>
+
+      <view class="card-footer">
+        <view class="time-box">
+          <text>投递时间：{{item.appliedAt}}</text>
+          <text>更新时间：{{item.updatedAt}}</text>
+        </view>
+        <button
+          wx:if="{{item.canViewJob}}"
+          class="view-btn"
+          catchtap="goToJobDetail"
+          data-job-id="{{item.jobId}}"
+        >
+          查看职位
+        </button>
+        <view wx:else class="disabled-btn">职位已下线</view>
+      </view>
+    </view>
+  </view>
+</view>

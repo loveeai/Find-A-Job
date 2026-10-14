@@ -1,0 +1,135 @@
+<view class="page">
+  <view wx:if="{{isLoading}}" class="state-card">
+    <text>简历加载中...</text>
+  </view>
+
+  <view wx:elif="{{!resume}}" class="empty-card">
+    <image class="empty-image" src="../../images/resume-empty.png" mode="aspectFit"></image>
+    <text class="empty-title">还没有创建简历</text>
+    <text class="empty-desc">先完善一份个人简历，再上传附件后就可以更顺畅地投递职位。</text>
+    <button class="btn-primary create-btn" bindtap="createResume">立即创建简历</button>
+  </view>
+
+  <view wx:else>
+    <view class="hero-card">
+      <view class="hero-top">
+        <view>
+          <text class="resume-title">{{resume.title}}</text>
+          <text class="resume-subtitle">{{resume.expectedPositionName}}</text>
+        </view>
+        <button class="btn-default ghost-btn" bindtap="editResume">编辑</button>
+      </view>
+
+      <view class="info-grid">
+        <view class="info-item">
+          <text class="info-label">姓名</text>
+          <text class="info-value">{{resume.name}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">性别</text>
+          <text class="info-value">{{resume.gender === 1 ? '男' : resume.gender === 2 ? '女' : '未填写'}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">电话</text>
+          <text class="info-value">{{resume.phone}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">邮箱</text>
+          <text class="info-value">{{resume.email}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="action-row">
+      <button class="btn-primary action-btn" bindtap="editResume">修改简历</button>
+      <button class="btn-default action-btn" bindtap="uploadResumeFile">上传附件</button>
+    </view>
+
+    <view class="section-card">
+      <text class="section-title">基本信息</text>
+      <view class="detail-row">
+        <text class="detail-label">所在地</text>
+        <text class="detail-value">{{resume.location}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">学历</text>
+        <text class="detail-value">{{resume.education}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">工作经验</text>
+        <text class="detail-value">{{resume.experience}}</text>
+      </view>
+      <view class="detail-row">
+        <text class="detail-label">期望职位</text>
+        <text class="detail-value">{{resume.expectedPositionName}}</text>
+      </view>
+    </view>
+
+    <view class="section-card">
+      <text class="section-title">自我介绍</text>
+      <text class="intro-text">{{resume.selfIntroduction}}</text>
+    </view>
+
+    <view class="section-card">
+      <view class="section-head">
+        <view>
+          <text class="section-title">简历附件</text>
+          <text class="section-tip">投递时可选择本次要发送的附件版本</text>
+        </view>
+        <button class="btn-default upload-mini" bindtap="uploadResumeFile">上传</button>
+      </view>
+
+      <view wx:if="{{resumeFiles.length}}">
+        <view class="file-card" wx:for="{{resumeFiles}}" wx:key="id">
+          <view class="file-main">
+            <image class="file-icon" src="../../images/file-icon.png" mode="aspectFit"></image>
+            <view class="file-info">
+              <text class="file-name">{{item.fileName}}</text>
+              <text class="file-size">{{item.formattedSize}}</text>
+            </view>
+          </view>
+          <view class="file-actions">
+            <button class="btn-primary file-btn" bindtap="downloadFile" data-file="{{item}}">查看</button>
+            <button class="btn-default file-btn danger-btn" bindtap="deleteResumeFile" data-id="{{item.id}}">删除</button>
+          </view>
+        </view>
+      </view>
+
+      <view wx:else class="empty-inline">暂时还没有上传附件</view>
+    </view>
+  </view>
+
+  <view wx:if="{{showUploadDialog}}" class="modal">
+    <view class="modal-mask" bindtap="closeUploadDialog"></view>
+    <view class="modal-panel">
+      <view class="modal-head">
+        <text class="modal-title">上传简历附件</text>
+        <text class="modal-close" bindtap="closeUploadDialog">×</text>
+      </view>
+
+      <view class="modal-body">
+        <view class="form-item">
+          <text class="form-label">文件名称</text>
+          <input
+            class="form-input"
+            value="{{uploadDisplayName}}"
+            maxlength="30"
+            placeholder="请输入附件名称"
+            bindinput="onUploadNameInput"
+          />
+          <text class="form-tip">企业查看投递时会显示这个附件名称。</text>
+        </view>
+
+        <view wx:if="{{pendingUploadFile}}" class="selected-file">
+          <text class="selected-file-label">已选择文件</text>
+          <text class="selected-file-name">{{pendingUploadFile.name}}</text>
+        </view>
+      </view>
+
+      <view class="modal-actions">
+        <button class="btn-default modal-btn" bindtap="closeUploadDialog">取消</button>
+        <button class="btn-primary modal-btn" bindtap="confirmUploadResumeFile">确认上传</button>
+      </view>
+    </view>
+  </view>
+</view>

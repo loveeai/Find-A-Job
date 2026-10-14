@@ -1,0 +1,150 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{jobId ? '编辑职位' : '发布职位'}}</text>
+  </view>
+
+  <view class="content">
+    <view wx:if="{{!canPublish}}" class="status-card">
+      <text class="status-card-title">当前无法提交职位</text>
+      <text class="status-card-text">{{blockReason || '企业账号当前不可用，请稍后重试'}}</text>
+    </view>
+
+    <view class="form-item">
+      <text class="label">职位名称 <text class="required">*</text></text>
+      <input
+        class="input"
+        value="{{job.title}}"
+        bindinput="onInput"
+        data-field="title"
+        placeholder="请输入职位名称"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="label">职位分类 <text class="required">*</text></text>
+      <picker
+        class="picker"
+        value="{{selectedFirstLevelIndex}}"
+        range="{{firstLevelCategories}}"
+        range-key="name"
+        bindchange="selectFirstLevel"
+      >
+        <view class="picker-content">
+          <text>{{selectedFirstLevelName}}</text>
+        </view>
+      </picker>
+
+      <view wx:if="{{showSecondLevel}}" class="form-item second-level">
+        <text class="label">二级分类 <text class="required">*</text></text>
+        <picker
+          class="picker"
+          value="{{selectedSecondLevelIndex}}"
+          range="{{secondLevelCategories}}"
+          range-key="name"
+          bindchange="selectSecondLevel"
+        >
+          <view class="picker-content">
+            <text>{{selectedSecondLevelName}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <text class="label">薪资范围 <text class="required">*</text></text>
+      <view class="salary-wrapper">
+        <input
+          class="input salary"
+          type="number"
+          value="{{job.salaryMin}}"
+          bindinput="onInput"
+          data-field="salaryMin"
+          placeholder="最低时薪"
+        />
+        <text class="salary-divider">-</text>
+        <input
+          class="input salary"
+          type="number"
+          value="{{job.salaryMax}}"
+          bindinput="onInput"
+          data-field="salaryMax"
+          placeholder="最高时薪"
+        />
+        <text class="salary-unit">元/小时</text>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <text class="label">工作地点 <text class="required">*</text></text>
+      <input
+        class="input"
+        value="{{job.location}}"
+        bindinput="onInput"
+        data-field="location"
+        placeholder="请输入工作地点"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="label">职位描述 <text class="required">*</text></text>
+      <textarea
+        class="textarea"
+        value="{{job.description}}"
+        bindinput="onInput"
+        data-field="description"
+        placeholder="请输入职位描述"
+        auto-height
+      ></textarea>
+    </view>
+
+    <view class="form-item">
+      <text class="label">福利待遇 <text class="required">*</text></text>
+      <textarea
+        class="textarea"
+        value="{{job.welfare}}"
+        bindinput="onInput"
+        data-field="welfare"
+        placeholder="请输入福利待遇"
+        auto-height
+      ></textarea>
+    </view>
+
+    <view class="form-item">
+      <text class="label">招聘开始时间</text>
+      <picker class="picker" mode="date" value="{{job.startTime}}" bindchange="onDateChange" data-field="startTime">
+        <view class="picker-content">
+          <text class="{{job.startTime ? '' : 'placeholder'}}">
+            {{job.startTime || '请选择招聘开始时间'}}
+          </text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">招聘结束时间</text>
+      <picker class="picker" mode="date" value="{{job.endTime}}" bindchange="onDateChange" data-field="endTime">
+        <view class="picker-content">
+          <text class="{{job.endTime ? '' : 'placeholder'}}">
+            {{job.endTime || '请选择招聘结束时间'}}
+          </text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">招聘人数</text>
+      <input
+        class="input"
+        type="number"
+        value="{{job.nums}}"
+        bindinput="onInput"
+        data-field="nums"
+        placeholder="请输入招聘人数，不填表示不限"
+      />
+    </view>
+
+    <button class="btn-primary publish-btn" bindtap="publishJob" loading="{{loading}}" disabled="{{!canPublish || loading}}">
+      {{jobId ? '保存职位' : '发布职位'}}
+    </button>
+  </view>
+</view>

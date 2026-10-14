@@ -1,0 +1,204 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef7f1 0%, #f7f8fa 260rpx, #f7f8fa 100%);
+}
+
+.hero {
+  position: relative;
+  padding: 24rpx 24rpx 0;
+}
+
+.hero-swiper {
+  width: 100%;
+  height: 320rpx;
+  border-radius: 28rpx;
+  overflow: hidden;
+  box-shadow: 0 16rpx 40rpx rgba(7, 193, 96, 0.12);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-copy {
+  position: absolute;
+  left: 52rpx;
+  right: 52rpx;
+  bottom: 36rpx;
+  color: #ffffff;
+  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.22);
+}
+
+.hero-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.hero-desc {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}
+
+.content {
+  padding: 28rpx 24rpx 160rpx;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+
+.section-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.section-desc {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #8a8f99;
+}
+
+.section-link {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: #f0fbf4;
+  color: #07c160;
+  font-size: 24rpx;
+}
+
+.state-card {
+  padding: 48rpx 32rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8a8f99;
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 10rpx 24rpx rgba(31, 36, 48, 0.05);
+}
+
+.job-card {
+  margin-bottom: 20rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 12rpx 28rpx rgba(31, 36, 48, 0.06);
+}
+
+.job-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.job-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.job-title {
+  display: block;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1f2430;
+  line-height: 1.4;
+}
+
+.job-company {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #58606d;
+}
+
+.job-salary {
+  flex-shrink: 0;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #ff7a00;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+  margin-top: 20rpx;
+}
+
+.job-meta text {
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: #f4f6f8;
+  color: #58606d;
+  font-size: 24rpx;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 18rpx;
+}
+
+.tag {
+  padding: 8rpx 16rpx;
+  border-radius: 14rpx;
+  background: #edf9f1;
+  color: #07c160;
+  font-size: 24rpx;
+}
+
+.job-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-top: 24rpx;
+}
+
+.job-location {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  flex: 1;
+  min-width: 0;
+  color: #8a8f99;
+  font-size: 25rpx;
+}
+
+.job-location text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collect-pill {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 12rpx 18rpx;
+  border-radius: 999rpx;
+  border: 2rpx solid #dff5e5;
+  background: #f7fff9;
+  color: #07c160;
+  font-size: 24rpx;
+  flex-shrink: 0;
+}
+
+.collect-pill.active {
+  border-color: #ffe7bf;
+  background: #fff7eb;
+  color: #ff8a00;
+}

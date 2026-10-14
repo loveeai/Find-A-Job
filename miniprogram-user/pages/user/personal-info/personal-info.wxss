@@ -1,0 +1,137 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: calc(32rpx + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, #0eb85d 0%, #0eb85d 240rpx, #f6f8fa 240rpx, #f6f8fa 100%);
+  box-sizing: border-box;
+}
+
+.page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28rpx 24rpx 0;
+}
+
+.back-btn,
+.save-btn {
+  min-width: 84rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18rpx;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 26rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.form-card {
+  margin: 10rpx 24rpx 0;
+  padding: 32rpx 28rpx 36rpx;
+  background: #ffffff;
+  border-radius: 32rpx;
+  box-shadow: 0 16rpx 36rpx rgba(31, 36, 48, 0.08);
+}
+
+.avatar-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 28rpx;
+}
+
+.avatar {
+  width: 164rpx;
+  height: 164rpx;
+  border-radius: 50%;
+  background: #f3f5f7;
+  box-shadow: 0 12rpx 28rpx rgba(31, 36, 48, 0.12);
+}
+
+.avatar-btn {
+  width: 240rpx;
+  height: 80rpx;
+  margin-top: 24rpx;
+  font-size: 26rpx;
+}
+
+.form-item {
+  margin-top: 22rpx;
+}
+
+.label {
+  display: block;
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1f2430;
+}
+
+.input,
+.readonly {
+  width: 100%;
+  min-height: 88rpx;
+  padding: 24rpx 22rpx;
+  border-radius: 20rpx;
+  background: #f8fafb;
+  border: 2rpx solid #e6ecf0;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #1f2430;
+}
+
+.input-placeholder {
+  color: #98a2ad;
+  font-size: 24rpx;
+}
+
+.field-rule {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  line-height: 1.6;
+  color: #7c8795;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.readonly {
+  display: flex;
+  align-items: center;
+}
+
+.gender-row {
+  display: flex;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.gender-item {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  padding: 18rpx 22rpx;
+  border-radius: 20rpx;
+  background: #f8fafb;
+  border: 2rpx solid #e6ecf0;
+  font-size: 26rpx;
+  color: #1f2430;
+}
+
+.role-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  background: rgba(14, 184, 93, 0.1);
+  color: #0a9f52;
+  font-size: 26rpx;
+  font-weight: 600;
+}

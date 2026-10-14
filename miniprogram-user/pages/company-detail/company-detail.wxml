@@ -1,0 +1,55 @@
+<view class="page" wx:if="{{companyInfo}}">
+  <view class="hero-card">
+    <image class="company-logo" src="{{companyInfo.logo}}" mode="aspectFill"></image>
+    <view class="hero-body">
+      <text class="company-name">{{companyInfo.name}}</text>
+      <view class="company-meta">
+        <text>{{companyInfo.industry}}</text>
+        <text>{{companyInfo.scale}}</text>
+      </view>
+      <view class="address-row">
+        <van-icon name="location-o" size="28rpx" color="#8a8f99"></van-icon>
+        <text>{{companyInfo.address}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-card">
+    <view class="section-head">
+      <text class="section-title">企业介绍</text>
+    </view>
+    <text class="company-desc">{{companyInfo.description}}</text>
+  </view>
+
+  <view class="section-card">
+    <view class="section-head">
+      <text class="section-title">在招职位</text>
+      <text class="section-subtitle">{{jobList.length}} 个岗位</text>
+    </view>
+
+    <view wx:if="{{jobList.length}}">
+      <view class="job-card" wx:for="{{jobList}}" wx:key="id" bindtap="goToJobDetail" data-id="{{item.id}}">
+        <view class="job-top">
+          <view class="job-main">
+            <text class="job-title">{{item.jobName}}</text>
+            <text class="job-meta">{{item.companyIndustry}} · {{item.jobType}}</text>
+          </view>
+          <text class="job-salary">{{item.salary}}</text>
+        </view>
+        <view class="job-tags" wx:if="{{item.tags.length}}">
+          <text class="tag" wx:for="{{item.tags}}" wx:key="index">{{item}}</text>
+        </view>
+        <view class="job-location">
+          <van-icon name="location-o" size="26rpx" color="#8a8f99"></van-icon>
+          <text>{{item.companyLocation}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:else class="empty-jobs">该企业暂时没有公开职位</view>
+  </view>
+</view>
+
+<view wx:else class="loading-page">
+  <text>{{isLoading ? '企业详情加载中...' : '暂无企业信息'}}</text>
+</view>
