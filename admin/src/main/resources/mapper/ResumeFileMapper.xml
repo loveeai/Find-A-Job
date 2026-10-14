@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.ResumeFileMapper">
+
+    <resultMap id="ResumeFileResult" type="ResumeFile">
+        <id property="id" column="id"></id>
+        <result property="resumeId" column="resume_id"></result>
+        <result property="fileName" column="file_name"></result>
+        <result property="filePath" column="file_path"></result>
+        <result property="fileSize" column="file_size"></result>
+        <result property="fileType" column="file_type"></result>
+        <result property="createTime" column="create_time"></result>
+    </resultMap>
+
+    <sql id="selectResumeFileVo">
+        select id, resume_id, file_name, file_path, file_size, file_type, create_time from resume_file
+    </sql>
+
+    <select id="selectResumeFileList" parameterType="ResumeFile" resultMap="ResumeFileResult">
+        <include refid="selectResumeFileVo"/>
+        <where>
+            <if test="id != null and id != 0">
+                and id = #{id}
+            </if>
+            <if test="resumeId != null and resumeId != 0">
+                and resume_id = #{resumeId}
+            </if>
+            <if test="fileName != null and fileName != ''">
+                and file_name like concat('%', #{fileName}, '%')
+            </if>
+            <if test="fileType != null and fileType != ''">
+                and file_type = #{fileType}
+            </if>
+        </where>
+        order by create_time desc, id desc
+    </select>
+
+    <select id="selectResumeFileById" parameterType="Long" resultMap="ResumeFileResult">
+        <include refid="selectResumeFileVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertResumeFile" parameterType="ResumeFile">
+        insert into resume_file
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="resumeId != null">resume_id,</if>
+            <if test="fileName != null">file_name,</if>
+            <if test="filePath != null">file_path,</if>
+            <if test="fileSize != null">file_size,</if>
+            <if test="fileType != null">file_type,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="resumeId != null">#{resumeId},</if>
+            <if test="fileName != null">#{fileName},</if>
+            <if test="filePath != null">#{filePath},</if>
+            <if test="fileSize != null">#{fileSize},</if>
+            <if test="fileType != null">#{fileType},</if>
+        </trim>
+    </insert>
+
+    <update id="updateResumeFile" parameterType="ResumeFile">
+        update resume_file
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="resumeId != null">resume_id = #{resumeId},</if>
+            <if test="fileName != null">file_name = #{fileName},</if>
+            <if test="filePath != null">file_path = #{filePath},</if>
+            <if test="fileSize != null">file_size = #{fileSize},</if>
+            <if test="fileType != null">file_type = #{fileType},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteResumeFileById" parameterType="Long">
+        delete from resume_file where id = #{id}
+    </delete>
+
+    <delete id="deleteResumeFileByIds" parameterType="String">
+        delete from resume_file where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

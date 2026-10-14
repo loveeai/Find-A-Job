@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.ComplaintMapper">
+
+    <resultMap id="ComplaintResult" type="Complaint">
+        <id property="id" column="id"></id>
+        <result property="jobId" column="job_id"></result>
+        <result property="userId" column="user_id"></result>
+        <result property="reason" column="reason"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="userName" column="user_name"></result>
+        <result property="userPicture" column="user_picture"></result>
+        <result property="jobTitle" column="job_title"></result>
+        <result property="companyName" column="company_name"></result>
+    </resultMap>
+
+    <select id="selectComplaintList" parameterType="Complaint" resultMap="ComplaintResult">
+        select c.id,
+               c.job_id,
+               c.user_id,
+               c.reason,
+               c.create_time,
+               u.user_name,
+               u.user_picture,
+               j.title as job_title,
+               e.name as company_name
+        from job_complaint c
+        left join sys_user u on c.user_id = u.user_id
+        left join job j on c.job_id = j.id
+        left join enterprise e on j.enterprise_id = e.id
+        <where>
+            <if test="id != null and id != 0">
+                and c.id = #{id}
+            </if>
+            <if test="jobId != null and jobId != 0">
+                and c.job_id = #{jobId}
+            </if>
+            <if test="userId != null and userId != 0">
+                and c.user_id = #{userId}
+            </if>
+            <if test="userName != null and userName != ''">
+                and u.user_name like concat('%', #{userName}, '%')
+            </if>
+            <if test="companyName != null and companyName != ''">
+                and e.name like concat('%', #{companyName}, '%')
+            </if>
+            <if test="reason != null and reason != ''">
+                and c.reason like concat('%', #{reason}, '%')
+            </if>
+        </where>
+        order by c.create_time desc
+    </select>
+
+    <select id="selectComplaintById" parameterType="Long" resultMap="ComplaintResult">
+        select c.id,
+               c.job_id,
+               c.user_id,
+               c.reason,
+               c.create_time,
+               u.user_name,
+               u.user_picture,
+               j.title as job_title,
+               e.name as company_name
+        from job_complaint c
+        left join sys_user u on c.user_id = u.user_id
+        left join job j on c.job_id = j.id
+        left join enterprise e on j.enterprise_id = e.id
+        where c.id = #{id}
+    </select>
+
+    <insert id="insertComplaint" parameterType="Complaint" useGeneratedKeys="true" keyProperty="id">
+        insert into job_complaint (job_id, user_id, reason, create_time)
+        values (#{jobId}, #{userId}, #{reason}, #{createTime})
+    </insert>
+</mapper>

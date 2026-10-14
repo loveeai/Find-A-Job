@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.SysUserMapper">
+
+    <resultMap id="SysUserMap" type="SysUser">
+        <id property="userId" column="user_id"></id>
+        <result property="userName" column="user_name"></result>
+        <result property="password" column="password"></result>
+        <result property="phoneNumber" column="phone_number"></result>
+        <result property="sex" column="sex"></result>
+        <result property="userPicture" column="user_picture"></result>
+        <result property="roleId" column="role_id"></result>
+        <result property="companyId" column="company_id"></result>
+        <result property="email" column="email"></result>
+        <result property="fileUrl" column="file_url"></result>
+        <result property="auditStatus" column="audit_status"></result>
+        <association property="company" column="company_id" select="com.study.web.controller.mapper.EnterpriseMapper.selectEnterpriseById"></association>
+    </resultMap>
+
+    <select id="findAll" resultMap="SysUserMap" parameterType="SysUser">
+        select *
+        from sys_user
+        <where>
+            <if test="userName != null and userName != ''">
+                and user_name like concat('%', #{userName}, '%')
+            </if>
+            <if test="userId != null and userId != 0">
+                and user_id = #{userId}
+            </if>
+            <if test="phoneNumber != null and phoneNumber != ''">
+                and phone_number like concat('%', #{phoneNumber}, '%')
+            </if>
+            <if test="email != null and email != ''">
+                and email like concat('%', #{email}, '%')
+            </if>
+            <if test="sex != null">
+                and sex = #{sex}
+            </if>
+            <if test="roleId != null">
+                and role_id = #{roleId}
+            </if>
+            <if test="companyId != null and companyId != 0">
+                and company_id = #{companyId}
+            </if>
+            <if test="auditStatus != null">
+                and audit_status = #{auditStatus}
+            </if>
+        </where>
+        order by user_id desc
+    </select>
+
+    <select id="findById" resultMap="SysUserMap" parameterType="long">
+        select *
+        from sys_user
+        where user_id = #{id}
+    </select>
+
+    <select id="findByName" resultMap="SysUserMap" parameterType="String">
+        select *
+        from sys_user
+        where user_name = #{userName}
+    </select>
+
+    <update id="add" parameterType="SysUser">
+        <selectKey keyProperty="userId" keyColumn="user_id" resultType="long" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into sys_user(
+            user_name,
+            password,
+            <if test="phoneNumber != null and phoneNumber != ''">phone_number,</if>
+            <if test="userPicture != null and userPicture != ''">user_picture,</if>
+            <if test="roleId != null and roleId != 0">role_id,</if>
+            <if test="companyId != null and companyId != 0">company_id,</if>
+            <if test="email != null and email != ''">email,</if>
+            <if test="fileUrl != null and fileUrl != ''">file_url,</if>
+            <if test="auditStatus != null">audit_status,</if>
+            sex
+        )
+        values(
+            #{userName},
+            #{password},
+            <if test="phoneNumber != null and phoneNumber != ''">#{phoneNumber},</if>
+            <if test="userPicture != null and userPicture != ''">#{userPicture},</if>
+            <if test="roleId != null and roleId != 0">#{roleId},</if>
+            <if test="companyId != null and companyId != 0">#{companyId},</if>
+            <if test="email != null and email != ''">#{email},</if>
+            <if test="fileUrl != null and fileUrl != ''">#{fileUrl},</if>
+            <if test="auditStatus != null">#{auditStatus},</if>
+            #{sex}
+        )
+    </update>
+
+    <update id="update" parameterType="SysUser">
+        update sys_user
+        set user_name = #{userName},
+            <if test="password != null and password != ''">password = #{password},</if>
+            <if test="phoneNumber != null and phoneNumber != ''">phone_number = #{phoneNumber},</if>
+            <if test="userPicture != null and userPicture != ''">user_picture = #{userPicture},</if>
+            <if test="roleId != null and roleId != 0">role_id = #{roleId},</if>
+            <if test="companyId != null and companyId != 0">company_id = #{companyId},</if>
+            <if test="email != null and email != ''">email = #{email},</if>
+            <if test="fileUrl != null and fileUrl != ''">file_url = #{fileUrl},</if>
+            <if test="auditStatus != null">audit_status = #{auditStatus},</if>
+            sex = #{sex}
+        where user_id = #{userId}
+    </update>
+
+    <update id="delete" parameterType="Long">
+        delete from sys_user where user_id = #{id}
+    </update>
+
+    <resultMap id="loginUserMap" type="LoginUser">
+        <id property="sysUser.userId" column="user_id"></id>
+        <result property="sysUser.userName" column="user_name"></result>
+        <result property="sysUser.password" column="password"></result>
+        <result property="sysUser.phoneNumber" column="phone_number"></result>
+        <result property="sysUser.sex" column="sex"></result>
+        <result property="sysUser.userPicture" column="user_picture"></result>
+        <result property="sysUser.roleId" column="role_id"></result>
+        <result property="sysUser.companyId" column="company_id"></result>
+        <result property="sysUser.email" column="email"></result>
+        <result property="sysUser.auditStatus" column="audit_status"></result>
+        <association property="sysUser.company" column="company_id" select="com.study.web.controller.mapper.EnterpriseMapper.selectEnterpriseById"></association>
+    </resultMap>
+
+    <select id="findLoginUser" parameterType="SysUserVo" resultMap="loginUserMap">
+        select *
+        from sys_user
+        where user_name = #{userName}
+          and password = #{password}
+    </select>
+
+    <select id="findUsersByName" parameterType="String" resultType="Long">
+        select user_id from sys_user where user_name = #{userName}
+    </select>
+
+    <select id="findUsersByPhoneNumber" parameterType="String" resultType="Long">
+        select user_id from sys_user where phone_number = #{phoneNumber}
+    </select>
+
+    <select id="findUsersByEmail" parameterType="String" resultType="Long">
+        select user_id from sys_user where email = #{email}
+    </select>
+
+    <select id="getUserByUserIdAndPassword" resultType="SysUser">
+        select *
+        from sys_user
+        where user_id = #{userId}
+          and password = #{toHex}
+    </select>
+
+    <insert id="importStudent">
+        insert into sys_user (user_name, password, sex, role_id, audit_status)
+        values (#{userName}, #{password}, #{sex}, #{roleId}, ifnull(#{auditStatus}, 1))
+    </insert>
+
+    <update id="updatePasswordByUserId">
+        update sys_user
+        set password = #{password}
+        where user_id = #{userId}
+    </update>
+</mapper>

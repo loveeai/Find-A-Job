@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.JobMapper">
+
+    <resultMap id="JobResult" type="Job">
+        <id property="id" column="id"></id>
+        <result property="enterpriseId" column="enterprise_id"></result>
+        <result property="title" column="title"></result>
+        <result property="categoryId" column="category_id"></result>
+        <result property="salaryMin" column="salary_min"></result>
+        <result property="salaryMax" column="salary_max"></result>
+        <result property="location" column="location"></result>
+        <result property="description" column="description"></result>
+        <result property="welfare" column="welfare"></result>
+        <result property="startTime" column="start_time"></result>
+        <result property="endTime" column="end_time"></result>
+        <result property="nums" column="nums"></result>
+        <result property="status" column="status"></result>
+        <result property="companyName" column="company_name"></result>
+        <result property="companyLogo" column="company_logo"></result>
+        <result property="companyScale" column="company_scale"></result>
+        <result property="companyIndustry" column="company_industry"></result>
+        <result property="salary" column="salary"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="updateTime" column="update_time"></result>
+    </resultMap>
+
+    <sql id="selectJobVo">
+        select j.id, j.enterprise_id, j.title, j.category_id, j.salary_min, j.salary_max, j.location, j.description, j.welfare, j.start_time, j.end_time, j.nums, j.status, j.create_time, j.update_time, 
+               e.name as company_name, e.logo as company_logo, e.scale as company_scale, e.industry as company_industry,
+               CONCAT(j.salary_min, '-', j.salary_max, '元/时') as salary
+        from job j
+        left join enterprise e on j.enterprise_id = e.id
+    </sql>
+
+    <select id="selectJobList" parameterType="Job" resultMap="JobResult">
+        <include refid="selectJobVo"/>
+        <where>
+            <if test="id != null and id != 0">
+                and j.id = #{id}
+            </if>
+            <if test="enterpriseId != null and enterpriseId != 0">
+                and j.enterprise_id = #{enterpriseId}
+            </if>
+            <if test="categoryId != null and categoryId != 0">
+                and j.category_id = #{categoryId}
+            </if>
+            <if test="title != null and title != ''">
+                and j.title like concat('%', #{title}, '%')
+            </if>
+            <if test="status != null">
+                and j.status = #{status}
+            </if>
+            <if test="location != null and location != ''">
+                and j.location like concat('%', #{location}, '%')
+            </if>
+            <!-- 扩展搜索条件 -->
+            <if test="keyword != null and keyword != ''">
+                and (j.title like concat('%', #{keyword}, '%') 
+                     or e.name like concat('%', #{keyword}, '%'))
+            </if>
+            <if test="industry != null and industry != ''">
+                and e.industry like concat('%', #{industry}, '%')
+            </if>
+            
+            <!-- 薪资范围筛选 -->
+            <if test="salaryMin != null and salaryMin > 0">
+                and j.salary_max &gt;= #{salaryMin}
+            </if>
+            <if test="salaryMax != null and salaryMax > 0">
+                and j.salary_min &lt;= #{salaryMax}
+            </if>
+            <if test="activeOnly != null and activeOnly">
+                and (j.end_time is null or date(j.end_time) &gt;= curdate())
+            </if>
+        </where>
+        order by j.create_time desc, j.id desc
+    </select>
+
+    <select id="selectJobById" parameterType="Long" resultMap="JobResult">
+        <include refid="selectJobVo"/>
+        where j.id = #{id}
+    </select>
+
+    <insert id="insertJob" parameterType="Job">
+        insert into job
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="enterpriseId != null">enterprise_id,</if>
+            <if test="title != null">title,</if>
+            <if test="categoryId != null">category_id,</if>
+            <if test="salaryMin != null">salary_min,</if>
+            <if test="salaryMax != null">salary_max,</if>
+            <if test="location != null">location,</if>
+            <if test="description != null">description,</if>
+            <if test="welfare != null">welfare,</if>
+            <if test="startTime != null">start_time,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="nums != null">nums,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="enterpriseId != null">#{enterpriseId},</if>
+            <if test="title != null">#{title},</if>
+            <if test="categoryId != null">#{categoryId},</if>
+            <if test="salaryMin != null">#{salaryMin},</if>
+            <if test="salaryMax != null">#{salaryMax},</if>
+            <if test="location != null">#{location},</if>
+            <if test="description != null">#{description},</if>
+            <if test="welfare != null">#{welfare},</if>
+            <if test="startTime != null">#{startTime},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="nums != null">#{nums},</if>
+            <if test="status != null">#{status},</if>
+        </trim>
+    </insert>
+
+    <update id="updateJob" parameterType="Job">
+        update job j
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="enterpriseId != null">j.enterprise_id = #{enterpriseId},</if>
+            <if test="title != null">j.title = #{title},</if>
+            <if test="categoryId != null">j.category_id = #{categoryId},</if>
+            <if test="salaryMin != null">j.salary_min = #{salaryMin},</if>
+            <if test="salaryMax != null">j.salary_max = #{salaryMax},</if>
+            <if test="location != null">j.location = #{location},</if>
+            <if test="description != null">j.description = #{description},</if>
+            <if test="welfare != null">j.welfare = #{welfare},</if>
+            <if test="startTime != null">j.start_time = #{startTime},</if>
+            <if test="endTime != null">j.end_time = #{endTime},</if>
+            <if test="nums != null">j.nums = #{nums},</if>
+            <if test="status != null">j.status = #{status},</if>
+        </trim>
+        where j.id = #{id}
+    </update>
+
+    <update id="updateJobAuditStatus">
+        update job
+        set status = #{status}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteJobById" parameterType="Long">
+        delete from job  where id = #{id}
+    </delete>
+
+    <delete id="deleteJobByIds" parameterType="String">
+        delete from job j where j.id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

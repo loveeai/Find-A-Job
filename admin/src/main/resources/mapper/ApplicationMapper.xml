@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.ApplicationMapper">
+
+    <resultMap id="ApplicationResult" type="Application">
+        <id property="id" column="id" />
+        <result property="jobId" column="job_id" />
+        <result property="resumeId" column="resume_id" />
+        <result property="resumeFileId" column="resume_file_id" />
+        <result property="userId" column="user_id" />
+        <result property="enterpriseId" column="enterprise_id" />
+        <result property="status" column="status" />
+        <result property="interviewTime" column="interview_time" />
+        <result property="interviewAddress" column="interview_address" />
+        <result property="createTime" column="create_time" />
+        <result property="updateTime" column="update_time" />
+        <result property="jobTitle" column="job_title" />
+        <result property="company" column="company_name" />
+        <result property="companyName" column="company_name" />
+        <result property="salary" column="salary" />
+        <result property="location" column="location" />
+        <result property="companyLogo" column="company_logo" />
+        <result property="companyScale" column="company_scale" />
+        <result property="companyIndustry" column="company_industry" />
+        <result property="resumeFileName" column="resume_file_name" />
+    </resultMap>
+
+    <sql id="selectApplicationVo">
+        select a.id,
+               a.job_id,
+               a.resume_id,
+               a.resume_file_id,
+               a.user_id,
+               a.enterprise_id,
+               a.status,
+               a.interview_time,
+               a.interview_address,
+               a.create_time,
+               a.update_time,
+               j.title as job_title,
+               e.name as company_name,
+               concat(j.salary_min, '-', j.salary_max, '元/时') as salary,
+               j.location,
+               e.logo as company_logo,
+               e.scale as company_scale,
+               e.industry as company_industry,
+               rf.file_name as resume_file_name
+        from application a
+        left join job j on a.job_id = j.id
+        left join enterprise e on j.enterprise_id = e.id
+        left join resume_file rf on a.resume_file_id = rf.id
+    </sql>
+
+    <select id="selectApplicationList" parameterType="Application" resultMap="ApplicationResult">
+        <include refid="selectApplicationVo"/>
+        <where>
+            <if test="id != null and id != 0">
+                and a.id = #{id}
+            </if>
+            <if test="jobId != null and jobId != 0">
+                and a.job_id = #{jobId}
+            </if>
+            <if test="resumeId != null and resumeId != 0">
+                and a.resume_id = #{resumeId}
+            </if>
+            <if test="resumeFileId != null and resumeFileId != 0">
+                and a.resume_file_id = #{resumeFileId}
+            </if>
+            <if test="userId != null and userId != 0">
+                and a.user_id = #{userId}
+            </if>
+            <if test="enterpriseId != null and enterpriseId != 0">
+                and a.enterprise_id = #{enterpriseId}
+            </if>
+            <if test="status != null">
+                and a.status = #{status}
+            </if>
+        </where>
+        order by a.create_time desc, a.id desc
+    </select>
+
+    <select id="selectApplicationById" parameterType="Long" resultMap="ApplicationResult">
+        <include refid="selectApplicationVo"/>
+        where a.id = #{id}
+    </select>
+
+    <insert id="insertApplication" parameterType="Application">
+        insert into application
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="jobId != null">job_id,</if>
+            <if test="resumeId != null">resume_id,</if>
+            <if test="resumeFileId != null">resume_file_id,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="enterpriseId != null">enterprise_id,</if>
+            <if test="status != null">status,</if>
+            <if test="interviewTime != null">interview_time,</if>
+            <if test="interviewAddress != null">interview_address,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="jobId != null">#{jobId},</if>
+            <if test="resumeId != null">#{resumeId},</if>
+            <if test="resumeFileId != null">#{resumeFileId},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="enterpriseId != null">#{enterpriseId},</if>
+            <if test="status != null">#{status},</if>
+            <if test="interviewTime != null">#{interviewTime},</if>
+            <if test="interviewAddress != null">#{interviewAddress},</if>
+        </trim>
+    </insert>
+
+    <update id="updateApplication" parameterType="Application">
+        update application
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="jobId != null">job_id = #{jobId},</if>
+            <if test="resumeId != null">resume_id = #{resumeId},</if>
+            <if test="resumeFileId != null">resume_file_id = #{resumeFileId},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="enterpriseId != null">enterprise_id = #{enterpriseId},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="interviewTime != null">interview_time = #{interviewTime},</if>
+            <if test="interviewAddress != null">interview_address = #{interviewAddress},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteApplicationById" parameterType="Long">
+        delete from application where id = #{id}
+    </delete>
+
+    <delete id="deleteApplicationByIds" parameterType="String">
+        delete from application where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

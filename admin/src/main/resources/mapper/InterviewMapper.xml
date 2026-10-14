@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.InterviewMapper">
+    
+    <resultMap type="Interview" id="InterviewResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="jobId"    column="job_id"    />
+        <result property="companyId"    column="company_id"    />
+        <result property="times"    column="times"    />
+        <result property="status"    column="status"    />
+        <result property="ctimes"    column="ctimes"    />
+        <association property="sysUser" column="user_id" select="com.study.web.controller.mapper.SysUserMapper.findById"></association>
+        <association property="job" column="job_id" select="com.study.web.controller.mapper.JobMapper.selectJobById"></association>
+    </resultMap>
+
+    <sql id="selectInterviewVo">
+        select id, user_id, job_id, company_id, times, status, ctimes from interview
+    </sql>
+
+    <select id="selectInterviewList" parameterType="Interview" resultMap="InterviewResult">
+        <include refid="selectInterviewVo"/>
+        <where>  
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="jobId != null "> and job_id = #{jobId}</if>
+            <if test="companyId != null "> and company_id = #{companyId}</if>
+            <if test="times != null "> and times = #{times}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+            <if test="ctimes != null "> and ctimes = #{ctimes}</if>
+        </where>
+    </select>
+    
+    <select id="selectInterviewById" parameterType="Long" resultMap="InterviewResult">
+        <include refid="selectInterviewVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertInterview" parameterType="Interview" useGeneratedKeys="true" keyProperty="id">
+        insert into interview
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="jobId != null">job_id,</if>
+            <if test="companyId != null">company_id,</if>
+            <if test="times != null">times,</if>
+            <if test="status != null">status,</if>
+            <if test="ctimes != null">ctimes,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="jobId != null">#{jobId},</if>
+            <if test="companyId != null">#{companyId},</if>
+            <if test="times != null">#{times},</if>
+            <if test="status != null">#{status},</if>
+            <if test="ctimes != null">#{ctimes},</if>
+         </trim>
+    </insert>
+
+    <update id="updateInterview" parameterType="Interview">
+        update interview
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="jobId != null">job_id = #{jobId},</if>
+            <if test="companyId != null">company_id = #{companyId},</if>
+            <if test="times != null">times = #{times},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="ctimes != null">ctimes = #{ctimes},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteInterviewById" parameterType="Long">
+        delete from interview where id = #{id}
+    </delete>
+
+    <delete id="deleteInterviewByIds" parameterType="String">
+        delete from interview where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

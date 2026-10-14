@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/dianying-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/vaccine-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/vaccine-common/pom.xml" />
+        <option value="$PROJECT_DIR$/vaccine-framework/pom.xml" />
+        <option value="$PROJECT_DIR$/vaccine-system/pom.xml" />
+        <option value="$PROJECT_DIR$/admin/pom.xml" />
+        <option value="$PROJECT_DIR$/common/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/framework/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/admin/src/main/resources/mapper/ChatMapper.xml" />
+    <file url="file://$PROJECT_DIR$/admin/src/main/resources/mapper/ChatMessageMapper.xml" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

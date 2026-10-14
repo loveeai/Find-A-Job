@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.UserCollectJobMapper">
+
+    <resultMap id="UserCollectJobResult" type="UserCollectJob">
+        <id property="id" column="id"></id>
+        <result property="userId" column="user_id"></result>
+        <result property="jobId" column="job_id"></result>
+        <result property="createTime" column="create_time"></result>
+        <!-- 职位信息 -->
+        <result property="title" column="title"></result>
+        <result property="companyName" column="company_name"></result>
+        <result property="salary" column="salary"></result>
+        <result property="location" column="location"></result>
+        <result property="description" column="description"></result>
+        <result property="industry" column="company_industry"></result>
+    </resultMap>
+
+    <sql id="selectUserCollectJobVo">
+        select u.id, u.user_id, u.job_id, u.create_time,
+               j.title, e.name as company_name, 
+               CONCAT(j.salary_min, '-', j.salary_max, '元/时') as salary,
+               j.location, j.description,
+               e.industry as company_industry
+        from user_collect_job u
+        left join job j on u.job_id = j.id
+        left join enterprise e on j.enterprise_id = e.id
+    </sql>
+
+    <select id="selectUserCollectJobList" parameterType="UserCollectJob" resultMap="UserCollectJobResult">
+        <include refid="selectUserCollectJobVo"/>
+        <where>
+            <if test="id != null and id != 0">
+                and u.id = #{id}
+            </if>
+            <if test="userId != null and userId != 0">
+                and u.user_id = #{userId}
+            </if>
+            <if test="jobId != null and jobId != 0">
+                and u.job_id = #{jobId}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectUserCollectJobById" parameterType="Long" resultMap="UserCollectJobResult">
+        <include refid="selectUserCollectJobVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertUserCollectJob" parameterType="UserCollectJob">
+        insert into user_collect_job
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="jobId != null">job_id,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="jobId != null">#{jobId},</if>
+        </trim>
+    </insert>
+
+    <update id="updateUserCollectJob" parameterType="UserCollectJob">
+        update user_collect_job
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="jobId != null">job_id = #{jobId},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUserCollectJobById" parameterType="Long">
+        delete from user_collect_job where id = #{id}
+    </delete>
+
+    <delete id="deleteUserCollectJobByIds" parameterType="String">
+        delete from user_collect_job where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+    <select id="checkUserCollectJob" parameterType="UserCollectJob" resultType="int">
+        select count(1) from user_collect_job
+        where user_id = #{userId} and job_id = #{jobId}
+    </select>
+</mapper>

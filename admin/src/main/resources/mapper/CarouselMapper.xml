@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.CarouselMapper">
+    
+    <resultMap type="Carousel" id="CarouselResult">
+        <result property="id"    column="id"    />
+        <result property="posters"    column="posters"    />
+        <result property="name"    column="name"    />
+        <result property="times"    column="times"    />
+        <result property="userId"    column="user_id"    />
+        <result property="utimes"    column="utimes"    />
+        <result property="uuserId"    column="uuser_id"    />
+        <result property="isgg"    column="isgg"    />
+        <association property="sysUser" column="user_id" select="com.study.web.controller.mapper.SysUserMapper.findById"></association>
+    </resultMap>
+
+    <sql id="selectCarouselVo">
+        select id, posters,name,times,user_id,utimes,uuser_id,isgg from carousel
+    </sql>
+
+    <select id="selectCarouselList" parameterType="Carousel" resultMap="CarouselResult">
+        <include refid="selectCarouselVo"/>
+        <where>
+            <if test="name != null  and name != ''"> and name = #{name}</if>
+            <if test="posters != null  and posters != ''"> and posters = #{posters}</if>
+        </where>
+    </select>
+    
+    <select id="selectCarouselById" parameterType="Long" resultMap="CarouselResult">
+        <include refid="selectCarouselVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertCarousel" parameterType="Carousel">
+        insert into carousel
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="posters != null">posters,</if>
+            <if test="name != null">name,</if>
+            <if test="times != null">times,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="utimes != null">utimes,</if>
+            <if test="uuserId != null">uuser_id,</if>
+            <if test="isgg != null">isgg,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="posters != null">#{posters},</if>
+            <if test="name != null">#{name},</if>
+            <if test="times != null">#{times},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="utimes != null">#{utimes},</if>
+            <if test="uuserId != null">#{uuserId},</if>
+            <if test="isgg != null">#{isgg},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCarousel" parameterType="Carousel">
+        update carousel
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="posters != null">posters = #{posters},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="times != null">times = #{times},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="utimes != null">utimes = #{utimes},</if>
+            <if test="uuserId != null">uuser_id = #{uuserId},</if>
+            <if test="isgg != null">isgg = #{isgg},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteCarouselById" parameterType="Long">
+        delete from carousel where id = #{id}
+    </delete>
+
+    <delete id="deleteCarouselByIds" parameterType="String">
+        delete from carousel where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

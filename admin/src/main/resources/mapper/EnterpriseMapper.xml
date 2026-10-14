@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.EnterpriseMapper">
+
+    <resultMap type="Enterprise" id="EnterpriseResult">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="logo" column="logo" />
+        <result property="scale" column="scale" />
+        <result property="employeeCount" column="employee_count" />
+        <result property="industry" column="industry" />
+        <result property="address" column="address" />
+        <result property="description" column="description" />
+        <result property="status" column="status" />
+        <result property="createTime" column="create_time" />
+        <result property="updateTime" column="update_time" />
+    </resultMap>
+
+    <sql id="selectEnterpriseVo">
+        select id, name, logo, scale, employee_count, industry, address, description, status, create_time, update_time from enterprise
+    </sql>
+
+    <select id="selectEnterpriseList" parameterType="Enterprise" resultMap="EnterpriseResult">
+        <include refid="selectEnterpriseVo"/>
+        <where>
+            <if test="id != null and id != 0">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name like concat('%', #{name}, '%')
+            </if>
+            <if test="address != null and address != ''">
+                and address like concat('%', #{address}, '%')
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="industry != null and industry != ''">
+                and industry = #{industry}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectEnterpriseById" parameterType="Long" resultMap="EnterpriseResult">
+        <include refid="selectEnterpriseVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertEnterprise" parameterType="Enterprise">
+        insert into enterprise
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">name,</if>
+            <if test="logo != null">logo,</if>
+            <if test="scale != null">scale,</if>
+            <if test="employeeCount != null">employee_count,</if>
+            <if test="industry != null">industry,</if>
+            <if test="address != null">address,</if>
+            <if test="description != null">description,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="name != null">#{name},</if>
+            <if test="logo != null">#{logo},</if>
+            <if test="scale != null">#{scale},</if>
+            <if test="employeeCount != null">#{employeeCount},</if>
+            <if test="industry != null">#{industry},</if>
+            <if test="address != null">#{address},</if>
+            <if test="description != null">#{description},</if>
+            <if test="status != null">#{status},</if>
+        </trim>
+    </insert>
+
+    <update id="updateEnterprise" parameterType="Enterprise">
+        update enterprise
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="logo != null">logo = #{logo},</if>
+            <if test="scale != null">scale = #{scale},</if>
+            <if test="employeeCount != null">employee_count = #{employeeCount},</if>
+            <if test="industry != null">industry = #{industry},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="status != null">status = #{status},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEnterpriseById" parameterType="Long">
+        delete from enterprise where id = #{id}
+    </delete>
+
+    <delete id="deleteEnterpriseByIds" parameterType="String">
+        delete from enterprise where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.ResumeMapper">
+
+    <resultMap id="ResumeResult" type="Resume">
+        <id property="id" column="id"></id>
+        <result property="userId" column="user_id"></result>
+        <result property="title" column="title"></result>
+        <result property="name" column="name"></result>
+        <result property="gender" column="gender"></result>
+        <result property="phone" column="phone"></result>
+        <result property="email" column="email"></result>
+        <result property="location" column="location"></result>
+        <result property="education" column="education"></result>
+        <result property="experience" column="experience"></result>
+        <result property="expectedPosition" column="expected_position"></result>
+        <result property="expectedPositionName" column="resolved_expected_position_name"></result>
+        <result property="selfIntroduction" column="self_introduction"></result>
+        <result property="status" column="status"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="updateTime" column="update_time"></result>
+        <result property="avatar" column="user_picture"></result>
+    </resultMap>
+
+    <sql id="selectResumeVo">
+        select r.id,
+               r.user_id,
+               r.title,
+               r.name,
+               r.gender,
+               r.phone,
+               r.email,
+               r.location,
+               r.education,
+               r.experience,
+               r.expected_position,
+               r.expected_position_name,
+               coalesce(nullif(r.expected_position_name, ''), j.title) as resolved_expected_position_name,
+               r.self_introduction,
+               r.status,
+               r.create_time,
+               r.update_time,
+               s.user_picture
+        from resume r
+        left join sys_user s on r.user_id = s.user_id
+        left join job j on r.expected_position = j.id
+    </sql>
+
+    <select id="selectResumeList" parameterType="Resume" resultMap="ResumeResult">
+        <include refid="selectResumeVo"/>
+        <where>
+            <if test="id != null and id != 0">
+                and r.id = #{id}
+            </if>
+            <if test="userId != null and userId != 0">
+                and r.user_id = #{userId}
+            </if>
+            <if test="name != null and name != ''">
+                and r.name like concat('%', #{name}, '%')
+            </if>
+            <if test="status != null">
+                and r.status = #{status}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectResumeById" parameterType="Long" resultMap="ResumeResult">
+        <include refid="selectResumeVo"/>
+        where r.id = #{id}
+    </select>
+
+    <insert id="insertResume" parameterType="Resume">
+        insert into resume
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="title != null">title,</if>
+            <if test="name != null">name,</if>
+            <if test="gender != null">gender,</if>
+            <if test="phone != null">phone,</if>
+            <if test="email != null">email,</if>
+            <if test="location != null">location,</if>
+            <if test="education != null">education,</if>
+            <if test="experience != null">experience,</if>
+            <if test="expectedPosition != null and expectedPosition != ''">expected_position,</if>
+            <if test="expectedPositionName != null">expected_position_name,</if>
+            <if test="selfIntroduction != null">self_introduction,</if>
+            <if test="status != null">status,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="title != null">#{title},</if>
+            <if test="name != null">#{name},</if>
+            <if test="gender != null">#{gender},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="email != null">#{email},</if>
+            <if test="location != null">#{location},</if>
+            <if test="education != null">#{education},</if>
+            <if test="experience != null">#{experience},</if>
+            <if test="expectedPosition != null and expectedPosition != ''">#{expectedPosition},</if>
+            <if test="expectedPositionName != null">#{expectedPositionName},</if>
+            <if test="selfIntroduction != null">#{selfIntroduction},</if>
+            <if test="status != null">#{status},</if>
+        </trim>
+    </insert>
+
+    <update id="updateResume" parameterType="Resume">
+        update resume
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="title != null">title = #{title},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="location != null">location = #{location},</if>
+            <if test="education != null">education = #{education},</if>
+            <if test="experience != null">experience = #{experience},</if>
+            <if test="expectedPosition != null and expectedPosition != ''">expected_position = #{expectedPosition},</if>
+            <if test="expectedPositionName != null">expected_position_name = #{expectedPositionName},</if>
+            <if test="selfIntroduction != null">self_introduction = #{selfIntroduction},</if>
+            <if test="status != null">status = #{status},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteResumeById" parameterType="Long">
+        delete from resume where id = #{id}
+    </delete>
+
+    <delete id="deleteResumeByIds" parameterType="String">
+        delete from resume where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

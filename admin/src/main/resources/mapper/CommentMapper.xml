@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.CommentMapper">
+
+    <resultMap id="CommentResult" type="Comment">
+        <id property="id" column="id"></id>
+        <result property="userId" column="user_id"></result>
+        <result property="content" column="content"></result>
+        <result property="times" column="times"></result>
+        <result property="jobId" column="job_id"></result>
+        <result property="userName" column="user_name"></result>
+        <result property="userPicture" column="user_picture"></result>
+        <result property="jobTitle" column="job_title"></result>
+    </resultMap>
+
+    <select id="selectCommentList" parameterType="Comment" resultMap="CommentResult">
+        select c.id,
+               c.user_id,
+               c.content,
+               c.times,
+               c.job_id,
+               u.user_name,
+               u.user_picture,
+               j.title as job_title
+        from comment c
+        left join sys_user u on c.user_id = u.user_id
+        left join job j on c.job_id = j.id
+        <where>
+            <if test="id != null and id != 0">
+                and c.id = #{id}
+            </if>
+            <if test="jobId != null and jobId != 0">
+                and c.job_id = #{jobId}
+            </if>
+            <if test="userId != null and userId != 0">
+                and c.user_id = #{userId}
+            </if>
+            <if test="userName != null and userName != ''">
+                and u.user_name like concat('%', #{userName}, '%')
+            </if>
+            <if test="content != null and content != ''">
+                and c.content like concat('%', #{content}, '%')
+            </if>
+        </where>
+        order by c.times desc
+    </select>
+
+    <insert id="insertComment" parameterType="Comment" useGeneratedKeys="true" keyProperty="id">
+        insert into comment (user_id, content, times, job_id)
+        values (#{userId}, #{content}, #{times}, #{jobId})
+    </insert>
+
+    <delete id="deleteCommentById" parameterType="Long">
+        delete from comment where id = #{id}
+    </delete>
+</mapper>
+

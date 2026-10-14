@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5061e2bb-4be7-464b-8fa4-6be1ae34822f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/java/com/vaccine/GouyanAdminApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/java/com/vaccine/web/controller/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/application-druid.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/0bea348e519b4e19a9f4745275de1550.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/236137fdcec24986bc814b9771ca1610.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/24a9618b56ff4df7a74a067d4c512bda.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/2cd2bfc44d144b60acbc9d5e4dee8338.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/3288ccae34964023983ec6ad880a71bc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/41d2adfd444e4ff1a25452657f017e6b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/41e4a4fb888742d79b04c14b3864674b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/480e75c3a16c4acab09453cf387a66cb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/4b13b299e81a435aa12b81e4892221da.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/55136c5750754172b38d7eb74ff236bd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/577678514b424481a23893b69fad082e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/77d24e6c1e1d4ff88494298cbe97bf79.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/7ad9949c113143d58079ad0e582544f4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/8e527c37e1b04fe5a589b5c06314c9ea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/a6e207a71f2d4f93b90d909cfbcc5c54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/ab3cddcf04f74b84bf3c527fbfb53710.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/b12b7d473a0b4795a5f46252ea41635f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/c39fd63a52cf4949aa9ad0f3ff47f8aa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/c97cfde7f9024504bc8b27b91eb1dd90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/e6ac22bf74f344bd8d27e266bb21737d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/actor/2020/12/15/fa0718013075446cab59a00f29b8bdfb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/01afb74db476472e913285607d2f0e11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/04e185afd6a8457a9f960240af8cbebe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/4bfaf8909ea845139b176ae0c60d152b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/4dad1006d9b24ee8b72115b57949fcf2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/5d8a4ae389b44cf3af73587259a47c02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/5e85858b73aa40c2b65be423d09ca71e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/65c44173e32c469dbac7d075b7c49dda.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/6e24bb8ca77a4ba29c03fc4b461153e1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/730319251df54095b3d54a908d78534a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/7637f53964374e1294732dd37509648a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/a8a9ce5f97fc4e8f94af491981e0098f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/d81a78634dd94d2d891664a5a1fa8381.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/de03f508ee8f4c0181254bcf9cc5a2ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/e55fa50224ce42caa0e1b1871663fb79.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/cinema/2020/12/15/f0e69a1d126c42be951337251884a8a6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/0b5191875a844e27bd52caf7048b354d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/16fabc3258a843f28beccab37041fa80.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/208998f6cd4e410f85db05631faca4c4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/2886b23c40ba4c57829c8938b10aeedb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/2f69dce23efe4db99e189ca4886bed48.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/3c856a4e413b4dd89cfd41a0d71faea9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/4425e22bc1264164a2fbdd01d56cd939.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/69aec299204e46bcb9174d80e30961fd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/7d886589922f45fbb4b9bfdc20a62a91.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/8341c3cdce0840c7b14dc88ce4dc5e0a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/94baa78550e34794823db457c27870a6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/9fc80b23da4847cc8a98c65abb14148f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/ad8e89daada24ab9b76b972894fa4418.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/cd079baa53ab4caa8bf7e984ff59b11c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/d40ac8629a9b47629f927454a0c345e9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/movie/2020/12/15/da999ff2914447e38cc854b1294d6c2a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/0b4f389d47724e3486247b64aaf4eedb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/2832ad8931bf4bcdb7c2dc56be794e85.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/4c988c9f1f454064b5a26e2812ff01a3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/4f1f61dbc5914122ae0d820ea8734a46.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/5765ed23e48a4626b4c8dc2c5d8ff91a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/59d6862d547840e6bc86336030b72430.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/609b06dfa09540d89971901712d49300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/96a9cc5884f14a4db2e48ca0d434d73b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/ba755080ab35404abd8284b6842ca77c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/main/resources/static/images/user/2020/12/15/daec8941dad549bc95cf1b26fd796ff1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-admin/src/test/java/com/dianying/GouyanAdminApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/constant/HttpStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/constant/MovieRankingList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/controller/FileUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/exception/DataNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/exception/FileNameLengthLimitExceededException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/exception/FileSizeLimitExceededException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/exception/InvalidExtensionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/file/FileUploadUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/file/MimeTypeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/page/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/page/PageBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/response/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/utils/ApplicationContextUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/utils/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/utils/SaltUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/utils/ServletUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-common/src/main/java/com/vaccine/common/utils/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/src/main/java/com/vaccine/framework/config/ApplicationConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/src/main/java/com/vaccine/framework/config/CrosConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/src/main/java/com/vaccine/framework/config/ShiroConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/src/main/java/com/vaccine/framework/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/src/main/java/com/vaccine/framework/shiro/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/src/main/java/com/vaccine/framework/shiro/JwtToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-framework/src/main/java/com/vaccine/framework/shiro/realms/CustomerRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/LoginUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/SysResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/SysRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/vo/SysBillVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/vo/SysCinemaVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/vo/SysMovieChartsVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/vo/SysMovieVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/vo/SysSessionVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/domin/vo/SysUserVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/mapper/SysResourceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/mapper/SysRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/mapper/SysUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/service/SysResourceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/service/SysRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/service/SysUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/service/impl/SysResourceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/java/com/vaccine/system/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/resources/mapper/SysResourceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-system/src/main/resources/mapper/SysUserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-ui/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-user/src/assets/homeLogo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-user/src/assets/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-user/src/assets/register-footer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vaccine-user/src/assets/registerLogo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/GouyanAdminApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/BaseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysActorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysActorMovieController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysActorRoleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysBillController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysCinemaAreaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysCinemaBrandController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysCinemaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysHallCategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysHallController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysMovieAgeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysMovieAreaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysMovieCategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysMovieCommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysMovieController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysMovieRuntimeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysMovieToCategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysResourceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysRoleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysSessionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/java/com/gouyan/web/controller/system/SysUserHobbyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/application-druid.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/0bea348e519b4e19a9f4745275de1550.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/15d4d709de5445e3a3a11848b36b270f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/236137fdcec24986bc814b9771ca1610.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/24a9618b56ff4df7a74a067d4c512bda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/2cd2bfc44d144b60acbc9d5e4dee8338.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/3288ccae34964023983ec6ad880a71bc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/3397f270491049e386178c7464a06876.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/38e18649714344e99f7b34bbb3de82e3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/41d2adfd444e4ff1a25452657f017e6b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/41e4a4fb888742d79b04c14b3864674b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/480e75c3a16c4acab09453cf387a66cb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/4b13b299e81a435aa12b81e4892221da.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/54668eee2db144d9934b3c35a088cff3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/55136c5750754172b38d7eb74ff236bd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/577678514b424481a23893b69fad082e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/6b6957b25e2a437a80009906e0645896.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/77d24e6c1e1d4ff88494298cbe97bf79.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/7ad9949c113143d58079ad0e582544f4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/8e527c37e1b04fe5a589b5c06314c9ea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/9ddfdedcb7e24a5391282109dfd49416.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/a6e207a71f2d4f93b90d909cfbcc5c54.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/ab3cddcf04f74b84bf3c527fbfb53710.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/b12b7d473a0b4795a5f46252ea41635f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/c39fd63a52cf4949aa9ad0f3ff47f8aa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/c97cfde7f9024504bc8b27b91eb1dd90.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/e6ac22bf74f344bd8d27e266bb21737d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/f1cd4a9370b04c5ca38340a90c4db079.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/fa0718013075446cab59a00f29b8bdfb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/actor/2020/12/15/fd0e1006adb14f39818608ef8ecfb988.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/01afb74db476472e913285607d2f0e11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/04e185afd6a8457a9f960240af8cbebe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/1f3f8b869c174c35ba314c5169dc2cf8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/1f5bf7570a6f4a2db9155b39c4346f96.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/32865c43eb424de08d1c2c65e0588f10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/4bfaf8909ea845139b176ae0c60d152b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/4dad1006d9b24ee8b72115b57949fcf2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/4f18270b91ea47e691d4f2e71321ec89.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/5d8a4ae389b44cf3af73587259a47c02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/5e85858b73aa40c2b65be423d09ca71e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/65c44173e32c469dbac7d075b7c49dda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/6e24bb8ca77a4ba29c03fc4b461153e1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/730319251df54095b3d54a908d78534a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/7637f53964374e1294732dd37509648a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/a8a9ce5f97fc4e8f94af491981e0098f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/c02cb0c58a5e4c469bdb2dea83ef16eb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/d81a78634dd94d2d891664a5a1fa8381.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/de03f508ee8f4c0181254bcf9cc5a2ab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/e55fa50224ce42caa0e1b1871663fb79.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/f0e69a1d126c42be951337251884a8a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/cinema/2020/12/15/f2a709ff33774840930a85fca3cfe331.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/00733b7ceb284b26ac43fa93f20fd991.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/0b5191875a844e27bd52caf7048b354d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/16fabc3258a843f28beccab37041fa80.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/190e45b2f62e414aae5f25c54df23c6d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/208998f6cd4e410f85db05631faca4c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/2886b23c40ba4c57829c8938b10aeedb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/2ba31ac24b334fef80a4555f7cef5298.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/2f69dce23efe4db99e189ca4886bed48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/3c856a4e413b4dd89cfd41a0d71faea9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/4425e22bc1264164a2fbdd01d56cd939.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/5711f4fa70ec4d53b714af51b2dc1819.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/5c6e503dc6154a9ab120256796acba34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/69aec299204e46bcb9174d80e30961fd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/75caecc71ba345a690e1e2c661ea7f3a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/7d886589922f45fbb4b9bfdc20a62a91.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/8341c3cdce0840c7b14dc88ce4dc5e0a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/94baa78550e34794823db457c27870a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/9fc80b23da4847cc8a98c65abb14148f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/a0dc7fecccf2483391ee08070cd66832.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/ad8e89daada24ab9b76b972894fa4418.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/b410a941952d4612b07f18b0622bc73e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/cd079baa53ab4caa8bf7e984ff59b11c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/d40ac8629a9b47629f927454a0c345e9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/da999ff2914447e38cc854b1294d6c2a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/movie/2020/12/15/e29341a6bf4640f7a6fb69442cade734.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/0b4f389d47724e3486247b64aaf4eedb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/1a36838e0d0b4e9e927c0ee21dc48b15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/2832ad8931bf4bcdb7c2dc56be794e85.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/2b2756c9a196478ba7f132d4210c3c86.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/4c988c9f1f454064b5a26e2812ff01a3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/4f1f61dbc5914122ae0d820ea8734a46.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/5765ed23e48a4626b4c8dc2c5d8ff91a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/59d6862d547840e6bc86336030b72430.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/609b06dfa09540d89971901712d49300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/7b39d58bfaa64c3f9d4425131ede7cc2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/82760d557d8c4620b453a7d7c2cd6340.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/831e066fe440467591adfc040699673f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/96a9cc5884f14a4db2e48ca0d434d73b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/ba755080ab35404abd8284b6842ca77c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/daec8941dad549bc95cf1b26fd796ff1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/main/resources/static/images/user/2020/12/15/eaa033dcf58c473d8c0d65d92f14872d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-admin/src/test/java/com/gouyan/GouyanAdminApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/constant/HttpStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/constant/MovieRankingList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/controller/FileUploadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/exception/DataNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/exception/FileNameLengthLimitExceededException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/exception/FileSizeLimitExceededException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/exception/InvalidExtensionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/file/FileUploadUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/file/MimeTypeUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/page/Page.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/page/PageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/response/ResponseResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/utils/ApplicationContextUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/utils/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/utils/SaltUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/utils/ServletUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-common/src/main/java/com/gouyan/common/utils/StringUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/src/main/java/com/gouyan/framework/config/ApplicationConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/src/main/java/com/gouyan/framework/config/CrosConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/src/main/java/com/gouyan/framework/config/ShiroConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/src/main/java/com/gouyan/framework/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/src/main/java/com/gouyan/framework/shiro/JwtFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/src/main/java/com/gouyan/framework/shiro/JwtToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-framework/src/main/java/com/gouyan/framework/shiro/realms/CustomerRealm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/LoginUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysActor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysActorMovie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysActorRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysBill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysCinema.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysCinemaArea.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysCinemaBrand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysHall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysHallCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysMovie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysMovieAge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysMovieArea.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysMovieCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysMovieComment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysMovieRuntime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysMovieToCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysSession.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/SysUserHobby.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/vo/SysBillVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/vo/SysCinemaVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/vo/SysMovieChartsVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/vo/SysMovieVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/vo/SysSessionVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/domin/vo/SysUserVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysActorMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysActorMovieMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysActorRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysBillMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysCinemaAreaMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysCinemaBrandMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysCinemaMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysHallCategoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysHallMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysMovieAgeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysMovieAreaMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysMovieCategoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysMovieCommentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysMovieMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysMovieRuntimeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysMovieToCategoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysResourceMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysSessionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysUserHobbyMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/mapper/SysUserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysActorMovieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysActorRoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysActorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysBillService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysCinemaAreaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysCinemaBrandService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysCinemaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysHallCategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysHallService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysMovieAgeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysMovieAreaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysMovieCategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysMovieCommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysMovieRuntimeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysMovieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysMovieToCategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysResourceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysRoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysSessionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysUserHobbyService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/SysUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysActorMovieServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysActorRoleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysActorServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysBillServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysCinemaAreaServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysCinemaBrandServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysCinemaServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysHallCategoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysHallServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysMovieAgeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysMovieAreaServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysMovieCategoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysMovieCommentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysMovieRuntimeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysMovieServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysMovieToCategoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysResourceServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysRoleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysSessionServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysUserHobbyServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/java/com/gouyan/system/service/impl/SysUserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysActorMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysActorMovieMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysActorRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysBillMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysCinemaAreaMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysCinemaBrandMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysCinemaMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysHallCategoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysHallMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysMovieAgeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysMovieAreaMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysMovieCategoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysMovieCommentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysMovieMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysMovieRuntimeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysMovieToCategoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysResourceMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysSessionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysUserHobbyMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-system/src/main/resources/mapper/SysUserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/.browserslistrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/404images/404.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/404images/404.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/404images/astronaut.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/404images/astronaut.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/404images/bg_purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/404images/bg_purple.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/404images/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/404images/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/404images/moon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/404images/moon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/404images/rocket.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/404images/rocket.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/css/fonts/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/css/fonts/iconfont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/css/fonts/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/css/fonts/iconfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/css/fonts/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/css/fonts/iconfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/css/fonts/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/css/fonts/iconfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/css/fonts/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/css/fonts/iconfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/js/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/js/permission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/login-background.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/login-background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/loginLogo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/loginLogo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/assets/welcome.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/assets/welcome.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/components/global_variable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/components/global_variable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/components/verifition/Verify.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/components/verifition/Verify.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/components/verifition/Verify/VerifyPoints.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/components/verifition/Verify/VerifyPoints.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/components/verifition/Verify/VerifySlide.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/components/verifition/Verify/VerifySlide.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/components/verifition/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/components/verifition/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/components/verifition/utils/ase.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/components/verifition/utils/ase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/components/verifition/utils/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/components/verifition/utils/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/components/verifition/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/components/verifition/utils/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/element-variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/element-variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/plugins/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/plugins/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/plugins/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/plugins/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/Book.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/Book.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/Error404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/Error404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/Welcome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/Welcome.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/actor/ActorInfo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/actor/ActorRole.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/cinema/CinemaArea.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/cinema/CinemaBrand.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/cinema/CinemaInfo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/hall/HallCategory.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/hall/HallInfo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/movie/MovieAge.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/movie/MovieArea.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/movie/MovieCategory.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/movie/MovieComment.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/movie/MovieInfo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/movie/MovieRuntime.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/role/ResourceInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/role/ResourceInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/role/RoleInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/role/RoleInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/session/SessionInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/session/SessionInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/user/BillInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/user/BillInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/user/UserHobby.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/user/UserHobby.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/src/views/user/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-ui/src/views/user/UserInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-ui/vue.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/.browserslistrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/404images/404.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/404images/404.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/404images/astronaut.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/404images/astronaut.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/404images/bg_purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/404images/bg_purple.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/404images/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/404images/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/404images/moon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/404images/moon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/404images/rocket.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/404images/rocket.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/bill-invalid.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/bill-invalid.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/carousel1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/carousel1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/carousel2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/carousel2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/carousel3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/carousel3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/carousel4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/carousel4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/css/fonts/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/css/fonts/iconfont.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/css/fonts/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/css/fonts/iconfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/css/fonts/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/css/fonts/iconfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/css/fonts/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/css/fonts/iconfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/css/fonts/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/css/fonts/iconfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/finish.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/finish.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/homeLogo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/login-background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/login-background.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/login-background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/money.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/money.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/movie-info-background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/movie-info-background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/register-footer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/register.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/register.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/registerLogo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/sofa-empty.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/sofa-empty.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/sofa-forbidden.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/sofa-forbidden.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/sofa-pick.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/sofa-pick.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/assets/sofa-unpick.png" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/assets/sofa-unpick.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/global_variable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/global_variable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/movie/movie-item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/movie/movie-item.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/verifition/Verify.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/verifition/Verify.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/verifition/Verify/VerifyPoints.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/verifition/Verify/VerifyPoints.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/verifition/Verify/VerifySlide.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/verifition/Verify/VerifySlide.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/verifition/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/verifition/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/verifition/utils/ase.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/verifition/utils/ase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/verifition/utils/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/verifition/utils/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/components/verifition/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/components/verifition/utils/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/element-variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/element-variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/plugins/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/plugins/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/plugins/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/plugins/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/Error404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/views/Error404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/views/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/Welcome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/views/Welcome.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/actor/ActorInfo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/cinema/Cinema.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/cinema/CinemaInfo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/views/home/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/movie/Movie.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/movie/MovieClassics.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/movie/MovieInfo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/movie/MovieOngoing.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/movie/MovieUpcoming.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/pay/BillDetail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/pay/ChooseSeat.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/rankinglist/AmericanBoxOfficeList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/rankinglist/DomesticBoxOfficeList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/rankinglist/Rankinglist.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/rankinglist/ReputationList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/rankinglist/Top100List.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/search/Search.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/search/SearchActor.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/search/SearchCinema.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/search/SearchMovie.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/user/BillInfo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/user/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/views/user/UserInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/src/views/user/UserMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/src/views/user/UserMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gouyan-user/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vaccine-user/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/movie.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/影院在线售票系统数据库脚本(含数据).sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="21qw0jqqGXufbIsdp2XLzNUIb2P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="ts.external.directory.path" value="D:\idea\idea\IntelliJ IDEA 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\bishe\2023-12\nzw\system\src\main\resources\mapper" />
+      <recent name="E:\bishe\2023-12\nzw\system\src\main\java\com\nzw\system\service\impl" />
+      <recent name="E:\bishe\2023-12\nzw\system\src\main\java\com\nzw\system\service" />
+      <recent name="E:\bishe\2023-12\nzw\system\src\main\java\com\nzw\system\mapper" />
+      <recent name="E:\bishe\2023-12\nzw\system\src\main\java\com\nzw\system\domin" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pets.system.service" />
+      <recent name="com.pets.system.service.impl" />
+      <recent name="com.pets.system.mapper" />
+      <recent name="com.pets.system.domin" />
+      <recent name="com.pets.web.controller.system" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.GouyanAdminApplication">
+    <configuration name="GouyanAdminApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nzw.GouyanAdminApplication" />
+      <module name="admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nzw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCF" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dianying.web.controller.system.UserCF" />
+      <module name="admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dianying.web.controller.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GouyanAdminApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.vaccine.GouyanAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GouyanAdminApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nzw.GouyanAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GouyanAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.dianying.GouyanAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GouyanAdminApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\dell\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5061e2bb-4be7-464b-8fa4-6be1ae34822f" name="Default Changelist" comment="" />
+      <created>1638681705618</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638681705618</updated>
+      <workItem from="1638681707962" duration="10875000" />
+      <workItem from="1638768559810" duration="23278000" />
+      <workItem from="1638852607031" duration="12933000" />
+      <workItem from="1638952092091" duration="11853000" />
+      <workItem from="1639032996325" duration="5922000" />
+      <workItem from="1639040931694" duration="18566000" />
+      <workItem from="1639116477332" duration="9311000" />
+      <workItem from="1639146405832" duration="4546000" />
+      <workItem from="1639288620116" duration="621000" />
+      <workItem from="1639294750441" duration="18000" />
+      <workItem from="1639317581128" duration="1226000" />
+      <workItem from="1639401408850" duration="711000" />
+      <workItem from="1639468376386" duration="124000" />
+      <workItem from="1639468576770" duration="135000" />
+      <workItem from="1639469759626" duration="936000" />
+      <workItem from="1639470962673" duration="1429000" />
+      <workItem from="1639478675155" duration="122000" />
+      <workItem from="1639480474573" duration="666000" />
+      <workItem from="1639710535500" duration="1146000" />
+      <workItem from="1639711706343" duration="444000" />
+      <workItem from="1639712163930" duration="419000" />
+      <workItem from="1639712599534" duration="220000" />
+      <workItem from="1639712862285" duration="1182000" />
+      <workItem from="1639904703249" duration="759000" />
+      <workItem from="1640097858925" duration="2195000" />
+      <workItem from="1640156189744" duration="10000" />
+      <workItem from="1646123564104" duration="9517000" />
+      <workItem from="1646157683952" duration="14000" />
+      <workItem from="1646192005849" duration="37000" />
+      <workItem from="1646194620105" duration="3339000" />
+      <workItem from="1646200213041" duration="1670000" />
+      <workItem from="1646201914005" duration="552000" />
+      <workItem from="1646202479694" duration="1043000" />
+      <workItem from="1646203561010" duration="14608000" />
+      <workItem from="1646232644009" duration="5401000" />
+      <workItem from="1646277540851" duration="7176000" />
+      <workItem from="1646295046671" duration="5429000" />
+      <workItem from="1646301162115" duration="14546000" />
+      <workItem from="1646322673848" duration="12000" />
+      <workItem from="1646323350508" duration="952000" />
+      <workItem from="1646324363033" duration="5639000" />
+      <workItem from="1646360778708" duration="17774000" />
+      <workItem from="1646447226820" duration="12482000" />
+      <workItem from="1646535560246" duration="74000" />
+      <workItem from="1646559725862" duration="1174000" />
+      <workItem from="1646561070617" duration="15000" />
+      <workItem from="1648363727705" duration="70000" />
+      <workItem from="1648365079720" duration="26362000" />
+      <workItem from="1648448216299" duration="11310000" />
+      <workItem from="1648472632127" duration="472000" />
+      <workItem from="1648475340719" duration="53000" />
+      <workItem from="1648475600382" duration="1388000" />
+      <workItem from="1648488594327" duration="1730000" />
+      <workItem from="1648536205038" duration="33000" />
+      <workItem from="1648572451973" duration="3013000" />
+      <workItem from="1648616471009" duration="5559000" />
+      <workItem from="1648628215036" duration="13695000" />
+      <workItem from="1648705100023" duration="882000" />
+      <workItem from="1648796557553" duration="1951000" />
+      <workItem from="1648799211942" duration="25637000" />
+      <workItem from="1648855252634" duration="10000" />
+      <workItem from="1648864364055" duration="13054000" />
+      <workItem from="1648962084562" duration="30000" />
+      <workItem from="1648991581607" duration="2071000" />
+      <workItem from="1648998659474" duration="133000" />
+      <workItem from="1649067327902" duration="2283000" />
+      <workItem from="1649094063965" duration="8000" />
+      <workItem from="1649682214254" duration="1362000" />
+      <workItem from="1649684840674" duration="4232000" />
+      <workItem from="1649731252573" duration="3861000" />
+      <workItem from="1649738487177" duration="615000" />
+      <workItem from="1649744530740" duration="17000" />
+      <workItem from="1649754379577" duration="185000" />
+      <workItem from="1649771322390" duration="1238000" />
+      <workItem from="1649817864891" duration="1963000" />
+      <workItem from="1649823684483" duration="14000" />
+      <workItem from="1649831835424" duration="11261000" />
+      <workItem from="1649914553095" duration="1074000" />
+      <workItem from="1649928567408" duration="19000" />
+      <workItem from="1649930159317" duration="243000" />
+      <workItem from="1649930494525" duration="77000" />
+      <workItem from="1651562540671" duration="569000" />
+      <workItem from="1651908110628" duration="2315000" />
+      <workItem from="1652080504025" duration="1294000" />
+      <workItem from="1660478632418" duration="682000" />
+      <workItem from="1660616793546" duration="45000" />
+      <workItem from="1660642309611" duration="732000" />
+      <workItem from="1665476975579" duration="944000" />
+      <workItem from="1666604679132" duration="270000" />
+      <workItem from="1667197128503" duration="7000" />
+      <workItem from="1667197233697" duration="872000" />
+      <workItem from="1675150172903" duration="3654000" />
+      <workItem from="1675174613250" duration="557000" />
+      <workItem from="1675180356374" duration="690000" />
+      <workItem from="1675181071331" duration="1597000" />
+      <workItem from="1675220406170" duration="228000" />
+      <workItem from="1675227422126" duration="67000" />
+      <workItem from="1677649626280" duration="485000" />
+      <workItem from="1677733210471" duration="68000" />
+      <workItem from="1677808516266" duration="531000" />
+      <workItem from="1679366691503" duration="11952000" />
+      <workItem from="1679454141413" duration="5481000" />
+      <workItem from="1679468946622" duration="1327000" />
+      <workItem from="1681577353220" duration="6480000" />
+      <workItem from="1681625973544" duration="7000" />
+      <workItem from="1681626275058" duration="40000" />
+      <workItem from="1681788687567" duration="3876000" />
+      <workItem from="1681794147590" duration="10000" />
+      <workItem from="1681794272725" duration="71000" />
+      <workItem from="1681804379610" duration="9000" />
+      <workItem from="1699249774204" duration="115000" />
+      <workItem from="1699252606059" duration="9000" />
+      <workItem from="1699252650483" duration="13061000" />
+      <workItem from="1699514865351" duration="507000" />
+      <workItem from="1699530889345" duration="25000" />
+      <workItem from="1699531275215" duration="343000" />
+      <workItem from="1699531811040" duration="892000" />
+      <workItem from="1700060905080" duration="7000" />
+      <workItem from="1700061040036" duration="1251000" />
+      <workItem from="1701057996470" duration="23000" />
+      <workItem from="1702693235755" duration="4549000" />
+      <workItem from="1702698232324" duration="5251000" />
+      <workItem from="1702782938804" duration="125000" />
+      <workItem from="1702783084775" duration="114000" />
+      <workItem from="1702826393897" duration="604000" />
+      <workItem from="1703478795061" duration="5294000" />
+      <workItem from="1703555525527" duration="13204000" />
+      <workItem from="1703675832136" duration="11000" />
+      <workItem from="1703768133880" duration="5000" />
+      <workItem from="1704205535754" duration="619000" />
+      <workItem from="1704252978849" duration="930000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

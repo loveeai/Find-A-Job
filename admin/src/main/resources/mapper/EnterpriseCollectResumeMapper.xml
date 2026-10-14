@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.web.controller.mapper.EnterpriseCollectResumeMapper">
+
+    <resultMap id="EnterpriseCollectResumeResult" type="EnterpriseCollectResume">
+        <id property="id" column="id"></id>
+        <result property="enterpriseId" column="enterprise_id"></result>
+        <result property="resumeId" column="resume_id"></result>
+        <result property="userId" column="user_id"></result>
+        <result property="createTime" column="create_time"></result>
+    </resultMap>
+
+    <sql id="selectEnterpriseCollectResumeVo">
+        select id, enterprise_id, resume_id, user_id, create_time from enterprise_collect_resume
+    </sql>
+
+    <select id="selectEnterpriseCollectResumeList" parameterType="EnterpriseCollectResume" resultMap="EnterpriseCollectResumeResult">
+        <include refid="selectEnterpriseCollectResumeVo"/>
+        <where>
+            <if test="id != null and id != 0">
+                and id = #{id}
+            </if>
+            <if test="enterpriseId != null and enterpriseId != 0">
+                and enterprise_id = #{enterpriseId}
+            </if>
+            <if test="resumeId != null and resumeId != 0">
+                and resume_id = #{resumeId}
+            </if>
+            <if test="userId != null and userId != 0">
+                and user_id = #{userId}
+            </if>
+        </where>
+        order by create_time desc, id desc
+    </select>
+
+    <select id="selectEnterpriseCollectResumeById" parameterType="Long" resultMap="EnterpriseCollectResumeResult">
+        <include refid="selectEnterpriseCollectResumeVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertEnterpriseCollectResume" parameterType="EnterpriseCollectResume">
+        insert into enterprise_collect_resume
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="enterpriseId != null">enterprise_id,</if>
+            <if test="resumeId != null">resume_id,</if>
+            <if test="userId != null">user_id,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="enterpriseId != null">#{enterpriseId},</if>
+            <if test="resumeId != null">#{resumeId},</if>
+            <if test="userId != null">#{userId},</if>
+        </trim>
+    </insert>
+
+    <update id="updateEnterpriseCollectResume" parameterType="EnterpriseCollectResume">
+        update enterprise_collect_resume
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="enterpriseId != null">enterprise_id = #{enterpriseId},</if>
+            <if test="resumeId != null">resume_id = #{resumeId},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEnterpriseCollectResumeById" parameterType="Long">
+        delete from enterprise_collect_resume where id = #{id}
+    </delete>
+
+    <delete id="deleteEnterpriseCollectResumeByIds" parameterType="String">
+        delete from enterprise_collect_resume where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
